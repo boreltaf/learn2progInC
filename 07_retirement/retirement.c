@@ -41,4 +41,5 @@ int main(void){
   retired.contribution = -4000;
   retired.rate_of_return = 0.01/12;
   retirement(327, 21345, working, retired);
+  return 0;
 }
