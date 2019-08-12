@@ -1,5 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+
+
+
+
 int current_age;
 double current_balance;
 
@@ -28,7 +32,7 @@ void retirement(int startAge, double initial, retire_info working, retire_info r
   retired.months = retired.months - 2;
  balance(retired, initial, current_age);
 }
-int main(){
+int main(void){
   retire_info working, retired;
   working.months = 489;
   working.contribution = 1000;
