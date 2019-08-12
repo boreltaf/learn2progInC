@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 int current_age;
+double current_balance;
 
 struct _retire_info{
   int months;
@@ -9,7 +10,7 @@ struct _retire_info{
 };
 typedef struct _retire_info retire_info;
 
-double  balance (retire_info x, double initial, int startAge){
+void  balance (retire_info x, double initial, int startAge){
   int i=0;
   do{
      printf("Age %3d month %2d you have $%.2f\n", startAge/12, startAge%12, initial);
@@ -19,13 +20,13 @@ double  balance (retire_info x, double initial, int startAge){
   } while(i<= x.months);
   initial = (initial - x.contribution)/(1 + x.rate_of_return);
   current_age = startAge;
-  return initial;
+  current_balance = initial;
 }
 void retirement(int startAge, double initial, retire_info working, retire_info retired){
-  initial = balance(working, initial, startAge);
-  initial = initial + (initial * retired.rate_of_return) + retired.contribution;
+  balance(working, initial, startAge);
+  initial = current_balance + (current_balance * retired.rate_of_return) + retired.contribution;
   retired.months = retired.months - 2;
- initial =  balance(retired, initial, current_age);
+ balance(retired, initial, current_age);
 }
 int main(){
   retire_info working, retired;
