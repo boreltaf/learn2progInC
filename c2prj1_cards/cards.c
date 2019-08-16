@@ -120,17 +120,16 @@ card_t card_from_letters(char value_let, char suit_let) {
 
 card_t card_from_num(unsigned c) {
   card_t temp;
-  int i=0, j=0;
-  for(i=0; i<52; i++){
-    if(i/13==0){ temp.suit=SPADES;}
-    if(i/13==1){ temp.suit=HEARTS;}
-    if(i/13==2){ temp.suit=CLUBS;}
-    if(i/13==3){temp.suit=DIAMONDS;}
+  int j=0;
+    if(c/13==0){ temp.suit=SPADES;}
+    if(c/13==1){ temp.suit=HEARTS;}
+    if(c/13==2){ temp.suit=CLUBS;}
+    if(c/13==3){temp.suit=DIAMONDS;}
     for(j=0; j<13; j++){
-     if(i%13==j){
+     if(c%13==j){
       temp.value=j+2;
      }
     }
-  }
+  
   return temp;
 }
