@@ -102,7 +102,6 @@ card_t card_from_letters(char value_let, char suit_let) {
     }
   }
   else{ printf("wrong entry\n");
-    assert(1<0);
   }
   
   if(suit_let=='s'){
@@ -114,7 +113,7 @@ card_t card_from_letters(char value_let, char suit_let) {
   else if(suit_let=='c'){temp.suit=CLUBS;}
   else if(suit_let=='d'){temp.suit=DIAMONDS;}
   else{ printf("WRONG ENTRY");
-    assert(1<0);
+    
   }
   return temp;
 }
