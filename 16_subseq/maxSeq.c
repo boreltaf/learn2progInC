@@ -13,8 +13,9 @@ size_t maxSeq(int * array, size_t n){
     while((array[i]<array[i+1])&&((i+1)<n)){
     j++;
     i++;
-    }
+    };
     max[i] = j;
+    j=1;
   }
   size_t maxseq = max[0];
   for(i=0; i<n; i++){
