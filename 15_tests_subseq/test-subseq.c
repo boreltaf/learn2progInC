@@ -1,13 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
 size_t maxSeq(int * array, size_t n);
 
 int main(){
   int array1[]={1,1,1,1,1,1,11};
   int array2[]={1,2,5,3,2,1,6,7,8};
-  int array3[]={};
   int array4[]={9,8,7,6,5,4,3,2,1};
   int array5[]={100,16,166,16,1666};
   int array6[]={-5,-6,-7,-3,-2,7};
@@ -19,8 +17,6 @@ int main(){
   if( maxSeq(array1, 7)!=2){
     return EXIT_FAILURE;}
   else if( maxSeq(array2,9) !=4){
-    return EXIT_FAILURE;}
-  else if( maxSeq(array3,0) !=0){
     return EXIT_FAILURE;}
   else if( maxSeq(array4,9) !=1){
     return EXIT_FAILURE;}
@@ -36,5 +32,6 @@ int main(){
     return EXIT_FAILURE;}
   else if( maxSeq(array10,6) !=3){
     return EXIT_FAILURE;}
-  else{ return  EXIT_SUCCESS;}
+  else{ printf("passed\n");
+    return  EXIT_SUCCESS;}
 }
