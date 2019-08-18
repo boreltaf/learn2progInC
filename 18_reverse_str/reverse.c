@@ -13,7 +13,7 @@ void reverse(char * str) {
       str[n-i-1] = cp;
    }
   }
-  else{ printf("");}
+  else{ str=NULL;}
 }
 
 int main(void) {
