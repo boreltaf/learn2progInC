@@ -7,7 +7,7 @@ void reverse(char * str) {
   int i=0;
   if(n==0){}
   else{
-    char arr[100000]={0};
+    char arr[10000000000000000]={0};
    for(i=0; i<n; i++){
     arr[i] = str[i];
    }
