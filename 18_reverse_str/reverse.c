@@ -5,14 +5,13 @@
 void reverse(char * str) {
   int n=strlen(str);
   int i=0;
+  char cp=0;
   if(n==0){}
   else{
-    char arr[1000000]={0};
-   for(i=0; i<n; i++){
-    arr[i] = str[i];
-   }
-   for(i=0; i<n; i++){
-     str[i]=arr[n-i-1];
+    for(i=0; i<(n/2); i++){
+      cp = str[i];
+      str[i] = str[n-i-1];
+      str[n-i-1] = cp;
    }
   }
 }
