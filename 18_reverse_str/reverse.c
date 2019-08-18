@@ -13,6 +13,7 @@ void reverse(char * str) {
       str[n-i-1] = cp;
    }
   }
+  else{ str = " ";}
 }
 
 int main(void) {
