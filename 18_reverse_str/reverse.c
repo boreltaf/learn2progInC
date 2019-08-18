@@ -3,6 +3,7 @@
 #include <string.h>
 
 void reverse(char * str) {
+  if( str != NULL ){
   int n=strlen(str);
   int i=0;
   char cp=0;
@@ -14,6 +15,7 @@ void reverse(char * str) {
    }
   }
   else{ str = " ";}
+  }
 }
 
 int main(void) {
