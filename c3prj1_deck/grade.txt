@@ -1,32 +1,14 @@
-Grading at Mon Aug 19 05:55:30 UTC 2019
+Grading at Mon Aug 19 06:43:51 UTC 2019
 Compiling deck.c
 Compiling cards.c
 Linking cards.o deck.o deck-c4.o and the grader's .o file
 Checking the output of all the functions other than shuffle
-Line_4_did_not_match
-Line_5_did_not_match
-Line_6_did_not_match
-Line_7_did_not_match
-Line_10_did_not_match
-Line_11_did_not_match
-Line_12_did_not_match
-Line_13_did_not_match
-Line_18_did_not_match
-Line_19_did_not_match
-Line_20_did_not_match
-Line_21_did_not_match
-Line_22_did_not_match
-Line_23_did_not_match
-Line_32_did_not_match
-Line_33_did_not_match
-Line_34_did_not_match
-Line_35_did_not_match
-Your file did not match the expected ouput
- - Those functions seem to have problems
+Your file matched the expected output
+ - Those functions seem to work!
 Checking your shuffle results with a 6 card hand...
   Least common hand: 0.131500%
   Most  common hand: 0.145900%
   Perfectly even is: 0.138888%
  Excellent!
 
-Overall Grade: F
+Overall Grade: A
