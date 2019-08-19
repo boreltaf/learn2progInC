@@ -79,14 +79,13 @@ void print_card(card_t c) {
 
 card_t card_from_letters(char value_let, char suit_let) {
   card_t temp;
-  temp.value=0;
+  temp.value = 0;
   int i=0;  
   for(i=2; i<=9; i++){
     if(value_let == ('0'+i)){
       temp.value = i;
     }
   }
-  if(temp.value==0){
     if(value_let=='0'){
       temp.value=10;
     }
@@ -102,8 +101,7 @@ card_t card_from_letters(char value_let, char suit_let) {
     if(value_let=='A'){
       temp.value=14;
     }
-  }
-  else{ printf("wrong entry\n");
+    if(value_let==0){ printf(" wrong entry\n");
   }
   
   if(suit_let=='s'){
