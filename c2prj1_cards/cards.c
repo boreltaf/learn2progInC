@@ -57,8 +57,10 @@ char value_letter(card_t c) {
   if(c.value==12){ return 'Q';}
   if(c.value==13){ return 'K';}
   if(c.value==14){ return 'A';}
-  else { printf("wrong value. the value should be between 2 and 14\n");}
-  return 'x';
+  else {
+    printf("wrong value. the value should be between 2 and 14\n");
+  }
+  return '?';
 }
 
 
@@ -67,7 +69,7 @@ char suit_letter(card_t c) {
   if(c.suit==HEARTS){ return 'h';}
   if(c.suit==DIAMONDS){ return 'd';}
   if(c.suit==CLUBS){ return 'c';}
-  return 'x';
+  else{ return '?';}
   
 }
 
