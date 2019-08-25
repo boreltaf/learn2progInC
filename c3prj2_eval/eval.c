@@ -83,33 +83,55 @@ ssize_t  find_secondary_pair(deck_t * hand,
 }
 
 int  straight_starting_at( deck_t *hand, size_t index){
-  int i;
-  for(i=index; i< hand->n_cards-1; i++){
-    int k = i;
+    int k = index;
     int count=1;
-    int up = k+1;
-    while(((*(*hand).cards[k]).value == ((*(*hand).cards[up]).value - 1))||((*(*hand).cards[k]).value == (*(*hand).cards[up]).value)){
-      if((*(*hand).cards[k]).value == (*(*hand).cards[up]).value - 1){
+    if(index >= hand->n_cards - 4){ return 0;}
+    //  if((k+1)>= hand->n_cards){ break;}
+    /* for(j=i; j< hand->n_cards; j++){
+       unsigned val2 = hand->cards[j]->value;
+       if(val2 == (val1 - 1)){
+	 count++;
+	 int a;
+	 for(a=j; a < hand->n_cards; a++){
+	   if(hand->cards[a]->value == hand->cards[j]->value-1){
+	     count++;
+	     int b;
+	     for(b=a; b < hand->n_cards; b++){
+	       if(hand->cards[b]->value == hand->cards[a]->value-1){
+	       count++;
+	       int d;
+	       for(d=b; d < hand->n_cards; d++){
+		 if(hand->cards[d]->value == hand->cards[b]->value-1){
+		   count++;
+		 }
+	       }
+	       }
+	     }
+	   }
+	 }
+       }
+     }
+     if(count >= 5){ return 1;}*/
+      while((((*(*hand).cards[k+1]).value) == (((*(*hand).cards[k]).value) - 1))||(((*(*hand).cards[k+1]).value) == ((*(*hand).cards[k]).value))){
+      if((*(*hand).cards[k+1]).value == (*(*hand).cards[k]).value - 1){
 	count++;
       }
       k++;
-      up++;
       if( k+1 >=  hand->n_cards){ break;}
   }
-    if(count >= 5){ return 1;}
- }
+  if(count >= 5){ return 1;}
   return 0;
 }
 
 int is_there_ACE_low( deck_t *hand, size_t index){
-  size_t i;
-  for(i=index; i< hand->n_cards; i++){
-    if( (hand->cards[i]->value) == 5){
-      size_t k=i;
+  if(index >= hand->n_cards - 3){ return 0;}
+    if( (hand->cards[index]->value) == 5){
+      size_t k=index;
       int count = 1;
-      while((((hand->cards[k]->value) == (hand->cards[k+1]->value - 1))||(hand->cards[k]->value == hand->cards[k+1]->value))){
-	if((hand->cards[k]->value) == (hand->cards[k+1]->value - 1)){
-	  count++;        }
+      while((((hand->cards[k+1]->value) == ((hand->cards[k]->value) - 1))||(hand->cards[k]->value == hand->cards[k+1]->value))){
+	if((hand->cards[k+1]->value) == (hand->cards[k]->value - 1)){
+	  count++;
+	}
 	k++;
 	if( k+1 >= hand->n_cards){ break ;}
       }
@@ -120,23 +142,51 @@ int is_there_ACE_low( deck_t *hand, size_t index){
 	return 0;
       }
     }
-  }
   return 0;
 }
     
 
 int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
 
-  if(fs == NUM_SUITS){
-    if(straight_starting_at(hand,0)== 1){ return 1;}
-    else{
-      return is_there_ACE_low(hand,0);
+  if(fs == NUM_SUITS){   
+      if(straight_starting_at(hand,index)== 1){ return 1;}
+      else{
+	return is_there_ACE_low(hand,index);
+      }
+    return 0;
     }
-  }
   else{
-    if(straight_starting_at(hand,index)== 1){ return 1;}
-    else{
-      return is_there_ACE_low(hand,index);
+    int count=1;
+    int k=index;
+    while((((*(*hand).cards[k+1]).value) == (((*(*hand).cards[k]).value) - 1))||(((*(*hand).cards[k+1]).value) == ((*(*hand).cards[k]).value))){
+      card_t n_card = (*(*hand).cards[k+1]);
+      card_t c_card = (*(*hand).cards[k]);
+      if((n_card.value == c_card.value - 1)&&(n_card.suit==fs)){
+	count++;
+      }
+      k++;
+      if( k+1 >=  hand->n_cards){ break;}
+  }
+    if(count >= 5){ return 1;}
+    else if( count == 4){
+      if( (hand->cards[index]->value) == 5){
+	size_t f=index;
+	int count2 = 1;
+	while((((hand->cards[f+1]->value) == ((hand->cards[f]->value) - 1))||(hand->cards[f]->value == hand->cards[f+1]->value))){
+	  if(((hand->cards[f+1]->value) == (hand->cards[f]->value - 1))&&(hand->cards[f+1]->suit == fs)){
+	    count2++;
+	  }
+	  f++;
+	  if( f+1 >= hand->n_cards){ break ;}
+	}
+	if(count2 >= 4){
+	  if((hand->cards[0]->value) == 14){
+	    return -1;
+	  }
+	  return 0;
+	}
+      }
+      return 0;
     }
   }
   return 0;
