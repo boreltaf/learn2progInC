@@ -5,7 +5,7 @@
 #include "deck.h"
 void print_hand(deck_t * hand){
   size_t i;
-  card_t c;
+  card_t c={2, NUM_SUITS};
   for(i=0; i< hand->n_cards; i++){
     c.value = hand-> cards[i]->value;
     c.suit = hand->cards[i]->suit;
