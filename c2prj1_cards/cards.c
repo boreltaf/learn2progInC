@@ -45,18 +45,19 @@ const char * ranking_to_string(hand_ranking_t r) {
 
 char value_letter(card_t c) {
   int i=0;
+  unsigned  value = c.value;
   for(i=2; i<=9; i++){
-    if(c.value==i){
+    if(value==i){
       return ('0'+i);
     }
   }
-  if(c.value==10){
+  if(value==10){
     return '0';
   }
-  if(c.value==11){ return 'J';}
-  if(c.value==12){ return 'Q';}
-  if(c.value==13){ return 'K';}
-  if(c.value==14){ return 'A';}
+  if(value==11){ return 'J';}
+  if(value==12){ return 'Q';}
+  if(value==13){ return 'K';}
+  if(value==14){ return 'A';}
   else {
     printf("wrong value. the value should be between 2 and 14\n");
   }
@@ -65,6 +66,7 @@ char value_letter(card_t c) {
 
 
 char suit_letter(card_t c) {
+  assert((c.suit==SPADES)||(c.suit==HEARTS)||(c.suit==DIAMONDS)||(c.suit==CLUBS));
   if(c.suit==SPADES){ return 's';}
   if(c.suit==HEARTS){ return 'h';}
   if(c.suit==DIAMONDS){ return 'd';}

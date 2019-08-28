@@ -4,7 +4,7 @@
 #include <time.h> 
 #include "deck.h"
 void print_hand(deck_t * hand){
-  size_t i;
+  size_t i=0;
   card_t c={2, NUM_SUITS};
   for(i=0; i< hand->n_cards; i++){
     c.value = hand-> cards[i]->value;
