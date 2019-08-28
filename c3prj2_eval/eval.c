@@ -168,13 +168,26 @@ int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
       if((n_card.value == c_card.value - 1)&&(n_card.suit==fs)){
 	count++;
       }
+      else if((n_card.value == c_card.value - 1)&&(!(n_card.suit == fs))){
+	if((*(*hand).cards[k+2]).value != (*(*hand).cards[k+1]).value){
+	  goto label;
+	}
+      }
+      if(n_card.value == c_card.value){
+	card_t check_c;
+	check_c.value = n_card.value;
+	check_c.suit = fs;
+	if(deck_contains(hand, check_c)==0){
+	  goto label;
+	}
+      }
       k++;
       if( k+1 >=  hand->n_cards){ break;}
   }
-    if(count >= 5){ return 1;}
+      label:  if(count >= 5){ return 1;}
     int count3=1000;
     for(int v=0; v<4; v++){
-      if((count == 4)&&((hand->cards[v]->value) == 14)&&(hand->cards[v]->suit == fs)){
+      if(((hand->cards[v]->value) == 14)&&(hand->cards[v]->suit == fs)){
 	count3=v;
       }
     }
@@ -232,6 +245,9 @@ hand_eval_t build_hand_from_match(deck_t * hand,
 
   hand_eval_t ans;
   size_t  i=0;
+  for(i=0; i<5; i++){
+    ans.cards[i] = hand->cards[i];
+  }
   size_t p = n;
   ans.ranking = what;
   for(i=0; i<p; i++){
