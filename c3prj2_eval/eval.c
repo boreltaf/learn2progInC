@@ -136,11 +136,15 @@ int is_there_ACE_low( deck_t *hand, size_t index){
 	if( k+1 >= hand->n_cards){ break ;}
       }
       if(count >= 4){
-	if((hand->cards[0]->value) == 14){
-	  return -1;
+	int count3=0;
+	for(int v=0; v<4; v++){
+	  if((hand->cards[v]->value) == 14){
+	    count3++;
+	  }
+	}
+	if(count3 >0){ return -1;}
 	}
 	return 0;
-      }
     }
   return 0;
 }
@@ -168,7 +172,36 @@ int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
       if( k+1 >=  hand->n_cards){ break;}
   }
     if(count >= 5){ return 1;}
-    else if( count == 4){
+    int count3=1000;
+    for(int v=0; v<4; v++){
+      if((count == 4)&&((hand->cards[v]->value) == 14)&&(hand->cards[v]->suit == fs)){
+	count3=v;
+      }
+    }
+    if(count3!= 1000){
+      count3 = 1000;
+      for(int v=0; v<hand->n_cards - 3;v++){
+	if((hand->cards[v]->value==5)&&(hand->cards[v]->suit==fs)){
+	  count3 = v;
+	}
+      }
+      if(count3!=1000){
+	k = count3;
+	count =0;
+	while((((*(*hand).cards[k+1]).value) == (((*(*hand).cards[k]).value) - 1))||(((*(*hand).cards[k+1]).value) == ((*(*hand).cards[k]).value))){
+	  card_t n_card = (*(*hand).cards[k+1]);
+	  card_t c_card = (*(*hand).cards[k]);
+	  if((n_card.value == c_card.value - 1)&&(n_card.suit==fs)){
+	    count++;
+	  }
+	  k++;
+	  if( k+1 >=  hand->n_cards){ break;}
+	}
+	if(count>=3){ return -1;}
+      }
+    }
+  }
+    /* else if( count == 4){
       if( (hand->cards[index]->value) == 5){
 	size_t f=index;
 	int count2 = 1;
@@ -188,7 +221,7 @@ int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
       }
       return 0;
     }
-  }
+    }*/
   return 0;
 }
 
@@ -258,8 +291,10 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
   qsort( hand2->cards, (*hand2).n_cards, sizeof(hand2->cards[0]), card_ptr_comp);
   hand_eval_t h1= evaluate_hand( hand1);
   hand_eval_t h2= evaluate_hand( hand2);
-  if( h1.ranking > h2.ranking ){ return 1;}
-  else if( h1.ranking < h2.ranking ){ return -1;}
+  int a = h1.ranking;
+  int b = h2.ranking;
+  if( a <  b ){ return 1;}
+  else if( h1.ranking >  h2.ranking ){ return -1;}
   else {
     int i;
     for(i=0; i<5; i++){
