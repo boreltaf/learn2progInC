@@ -66,7 +66,6 @@ char value_letter(card_t c) {
 
 
 char suit_letter(card_t c) {
-  assert((c.suit==SPADES)||(c.suit==HEARTS)||(c.suit==DIAMONDS)||(c.suit==CLUBS)||(c.suit == NUM_SUITS));
   if(c.suit==SPADES){ return 's';}
   if(c.suit==HEARTS){ return 'h';}
   if(c.suit==DIAMONDS){ return 'd';}
