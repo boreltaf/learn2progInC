@@ -1,4 +1,4 @@
-Grading at Wed Aug 28 23:43:29 UTC 2019
+Grading at Thu Aug 29 00:15:27 UTC 2019
 Compiling your code
 rm -f test poker cards.o my-test-main.o *~
 cc -ggdb3 -Wall -Werror -pedantic -std=gnu99   -c -o deck.o deck.c
@@ -6,555 +6,509 @@ cc -ggdb3 -Wall -Werror -pedantic -std=gnu99   -c -o cards.o cards.c
 gcc -o test-eval -ggdb3 deck.o deck-c4.o eval-c4.o eval.o test-eval.o cards.o input.o future.o
 Testcase 1: Trying hands with nothing
 Valgrind returned an error status
-==435== Memcheck, a memory error detector
-==435== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==435== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==435== Command: ./test-eval inp.1.txt
-==435== Parent PID: 434
-==435== 
-==435== Invalid read of size 4
-==435==    at 0x402312: compare_hands (eval.c:317)
-==435==    by 0x40322E: main (test-eval.c:124)
-==435==  Address 0x52082f8 is 0 bytes after a block of size 8 alloc'd
-==435==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==435==    by 0x401198: add_card_to (deck-c4.c:30)
-==435==    by 0x403A02: hand_from_string (input.c:49)
-==435==    by 0x403202: main (test-eval.c:122)
-==435== 
-==435== Invalid read of size 4
-==435==    at 0x402325: compare_hands (eval.c:317)
-==435==    by 0x40322E: main (test-eval.c:124)
-==435==  Address 0x5208768 is 0 bytes after a block of size 8 alloc'd
-==435==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==435==    by 0x401198: add_card_to (deck-c4.c:30)
-==435==    by 0x403A02: hand_from_string (input.c:49)
-==435==    by 0x403217: main (test-eval.c:123)
-==435== 
-==435== Invalid read of size 4
-==435==    at 0x402343: compare_hands (eval.c:318)
-==435==    by 0x40322E: main (test-eval.c:124)
-==435==  Address 0x52082f8 is 0 bytes after a block of size 8 alloc'd
-==435==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==435==    by 0x401198: add_card_to (deck-c4.c:30)
-==435==    by 0x403A02: hand_from_string (input.c:49)
-==435==    by 0x403202: main (test-eval.c:122)
-==435== 
-==435== Invalid read of size 4
-==435==    at 0x402356: compare_hands (eval.c:318)
-==435==    by 0x40322E: main (test-eval.c:124)
-==435==  Address 0x5208768 is 0 bytes after a block of size 8 alloc'd
-==435==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==435==    by 0x401198: add_card_to (deck-c4.c:30)
-==435==    by 0x403A02: hand_from_string (input.c:49)
-==435==    by 0x403217: main (test-eval.c:123)
-==435== 
-==435== 
-==435== HEAP SUMMARY:
-==435==     in use at exit: 0 bytes in 0 blocks
-==435==   total heap usage: 278 allocs, 278 frees, 13,728 bytes allocated
-==435== 
-==435== All heap blocks were freed -- no leaks are possible
-==435== 
-==435== For counts of detected and suppressed errors, rerun with: -v
-==435== ERROR SUMMARY: 48 errors from 4 contexts (suppressed: 0 from 0)
+==179== Memcheck, a memory error detector
+==179== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==179== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==179== Command: ./test-eval inp.1.txt
+==179== Parent PID: 178
+==179== 
+==179== Invalid read of size 4
+==179==    at 0x402312: compare_hands (eval.c:317)
+==179==    by 0x40324B: main (test-eval.c:124)
+==179==  Address 0x52082f8 is 0 bytes after a block of size 8 alloc'd
+==179==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==179==    by 0x401198: add_card_to (deck-c4.c:30)
+==179==    by 0x403A1F: hand_from_string (input.c:49)
+==179==    by 0x40321F: main (test-eval.c:122)
+==179== 
+==179== Invalid read of size 4
+==179==    at 0x402325: compare_hands (eval.c:317)
+==179==    by 0x40324B: main (test-eval.c:124)
+==179==  Address 0x5208768 is 0 bytes after a block of size 8 alloc'd
+==179==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==179==    by 0x401198: add_card_to (deck-c4.c:30)
+==179==    by 0x403A1F: hand_from_string (input.c:49)
+==179==    by 0x403234: main (test-eval.c:123)
+==179== 
+==179== Invalid read of size 4
+==179==    at 0x402343: compare_hands (eval.c:318)
+==179==    by 0x40324B: main (test-eval.c:124)
+==179==  Address 0x52082f8 is 0 bytes after a block of size 8 alloc'd
+==179==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==179==    by 0x401198: add_card_to (deck-c4.c:30)
+==179==    by 0x403A1F: hand_from_string (input.c:49)
+==179==    by 0x40321F: main (test-eval.c:122)
+==179== 
+==179== Invalid read of size 4
+==179==    at 0x402356: compare_hands (eval.c:318)
+==179==    by 0x40324B: main (test-eval.c:124)
+==179==  Address 0x5208768 is 0 bytes after a block of size 8 alloc'd
+==179==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==179==    by 0x401198: add_card_to (deck-c4.c:30)
+==179==    by 0x403A1F: hand_from_string (input.c:49)
+==179==    by 0x403234: main (test-eval.c:123)
+==179== 
+==179== 
+==179== HEAP SUMMARY:
+==179==     in use at exit: 0 bytes in 0 blocks
+==179==   total heap usage: 278 allocs, 278 frees, 13,728 bytes allocated
+==179== 
+==179== All heap blocks were freed -- no leaks are possible
+==179== 
+==179== For counts of detected and suppressed errors, rerun with: -v
+==179== ERROR SUMMARY: 48 errors from 4 contexts (suppressed: 0 from 0)
 Testcase 2: Trying hands with pairs
 Valgrind returned an error status
-==440== Memcheck, a memory error detector
-==440== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==440== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==440== Command: ./test-eval inp.2.txt
-==440== Parent PID: 439
-==440== 
-==440== Invalid read of size 4
-==440==    at 0x402312: compare_hands (eval.c:317)
-==440==    by 0x40322E: main (test-eval.c:124)
-==440==  Address 0x5208438 is 0 bytes after a block of size 8 alloc'd
-==440==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==440==    by 0x401198: add_card_to (deck-c4.c:30)
-==440==    by 0x403A02: hand_from_string (input.c:49)
-==440==    by 0x403202: main (test-eval.c:122)
-==440== 
-==440== Invalid read of size 4
-==440==    at 0x402325: compare_hands (eval.c:317)
-==440==    by 0x40322E: main (test-eval.c:124)
-==440==  Address 0x52088a8 is 0 bytes after a block of size 8 alloc'd
-==440==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==440==    by 0x401198: add_card_to (deck-c4.c:30)
-==440==    by 0x403A02: hand_from_string (input.c:49)
-==440==    by 0x403217: main (test-eval.c:123)
-==440== 
-==440== Invalid read of size 4
-==440==    at 0x402343: compare_hands (eval.c:318)
-==440==    by 0x40322E: main (test-eval.c:124)
-==440==  Address 0x5208438 is 0 bytes after a block of size 8 alloc'd
-==440==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==440==    by 0x401198: add_card_to (deck-c4.c:30)
-==440==    by 0x403A02: hand_from_string (input.c:49)
-==440==    by 0x403202: main (test-eval.c:122)
-==440== 
-==440== Invalid read of size 4
-==440==    at 0x402356: compare_hands (eval.c:318)
-==440==    by 0x40322E: main (test-eval.c:124)
-==440==  Address 0x52088a8 is 0 bytes after a block of size 8 alloc'd
-==440==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==440==    by 0x401198: add_card_to (deck-c4.c:30)
-==440==    by 0x403A02: hand_from_string (input.c:49)
-==440==    by 0x403217: main (test-eval.c:123)
-==440== 
-==440== 
-==440== HEAP SUMMARY:
-==440==     in use at exit: 0 bytes in 0 blocks
-==440==   total heap usage: 232 allocs, 232 frees, 13,028 bytes allocated
-==440== 
-==440== All heap blocks were freed -- no leaks are possible
-==440== 
-==440== For counts of detected and suppressed errors, rerun with: -v
-==440== ERROR SUMMARY: 32 errors from 4 contexts (suppressed: 0 from 0)
+==184== Memcheck, a memory error detector
+==184== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==184== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==184== Command: ./test-eval inp.2.txt
+==184== Parent PID: 183
+==184== 
+==184== Invalid read of size 4
+==184==    at 0x402312: compare_hands (eval.c:317)
+==184==    by 0x40324B: main (test-eval.c:124)
+==184==  Address 0x5208438 is 0 bytes after a block of size 8 alloc'd
+==184==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==184==    by 0x401198: add_card_to (deck-c4.c:30)
+==184==    by 0x403A1F: hand_from_string (input.c:49)
+==184==    by 0x40321F: main (test-eval.c:122)
+==184== 
+==184== Invalid read of size 4
+==184==    at 0x402325: compare_hands (eval.c:317)
+==184==    by 0x40324B: main (test-eval.c:124)
+==184==  Address 0x52088a8 is 0 bytes after a block of size 8 alloc'd
+==184==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==184==    by 0x401198: add_card_to (deck-c4.c:30)
+==184==    by 0x403A1F: hand_from_string (input.c:49)
+==184==    by 0x403234: main (test-eval.c:123)
+==184== 
+==184== Invalid read of size 4
+==184==    at 0x402343: compare_hands (eval.c:318)
+==184==    by 0x40324B: main (test-eval.c:124)
+==184==  Address 0x5208438 is 0 bytes after a block of size 8 alloc'd
+==184==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==184==    by 0x401198: add_card_to (deck-c4.c:30)
+==184==    by 0x403A1F: hand_from_string (input.c:49)
+==184==    by 0x40321F: main (test-eval.c:122)
+==184== 
+==184== Invalid read of size 4
+==184==    at 0x402356: compare_hands (eval.c:318)
+==184==    by 0x40324B: main (test-eval.c:124)
+==184==  Address 0x52088a8 is 0 bytes after a block of size 8 alloc'd
+==184==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==184==    by 0x401198: add_card_to (deck-c4.c:30)
+==184==    by 0x403A1F: hand_from_string (input.c:49)
+==184==    by 0x403234: main (test-eval.c:123)
+==184== 
+==184== 
+==184== HEAP SUMMARY:
+==184==     in use at exit: 0 bytes in 0 blocks
+==184==   total heap usage: 232 allocs, 232 frees, 13,028 bytes allocated
+==184== 
+==184== All heap blocks were freed -- no leaks are possible
+==184== 
+==184== For counts of detected and suppressed errors, rerun with: -v
+==184== ERROR SUMMARY: 32 errors from 4 contexts (suppressed: 0 from 0)
 Testcase 3: Trying hands with 2 pairs
 Valgrind returned an error status
-==445== Memcheck, a memory error detector
-==445== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==445== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==445== Command: ./test-eval inp.3.txt
-==445== Parent PID: 444
-==445== 
-==445== Invalid read of size 4
-==445==    at 0x402312: compare_hands (eval.c:317)
-==445==    by 0x40322E: main (test-eval.c:124)
-==445==  Address 0x5206e18 is 0 bytes after a block of size 8 alloc'd
-==445==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==445==    by 0x401198: add_card_to (deck-c4.c:30)
-==445==    by 0x403A02: hand_from_string (input.c:49)
-==445==    by 0x403202: main (test-eval.c:122)
-==445== 
-==445== Invalid read of size 4
-==445==    at 0x402325: compare_hands (eval.c:317)
-==445==    by 0x40322E: main (test-eval.c:124)
-==445==  Address 0x52071c8 is 0 bytes after a block of size 8 alloc'd
-==445==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==445==    by 0x401198: add_card_to (deck-c4.c:30)
-==445==    by 0x403A02: hand_from_string (input.c:49)
-==445==    by 0x403217: main (test-eval.c:123)
-==445== 
-==445== Invalid read of size 4
-==445==    at 0x402343: compare_hands (eval.c:318)
-==445==    by 0x40322E: main (test-eval.c:124)
-==445==  Address 0x5206e18 is 0 bytes after a block of size 8 alloc'd
-==445==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==445==    by 0x401198: add_card_to (deck-c4.c:30)
-==445==    by 0x403A02: hand_from_string (input.c:49)
-==445==    by 0x403202: main (test-eval.c:122)
-==445== 
-==445== Invalid read of size 4
-==445==    at 0x402356: compare_hands (eval.c:318)
-==445==    by 0x40322E: main (test-eval.c:124)
-==445==  Address 0x52071c8 is 0 bytes after a block of size 8 alloc'd
-==445==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==445==    by 0x401198: add_card_to (deck-c4.c:30)
-==445==    by 0x403A02: hand_from_string (input.c:49)
-==445==    by 0x403217: main (test-eval.c:123)
-==445== 
-==445== 
-==445== HEAP SUMMARY:
-==445==     in use at exit: 0 bytes in 0 blocks
-==445==   total heap usage: 544 allocs, 544 frees, 18,344 bytes allocated
-==445== 
-==445== All heap blocks were freed -- no leaks are possible
-==445== 
-==445== For counts of detected and suppressed errors, rerun with: -v
-==445== ERROR SUMMARY: 80 errors from 4 contexts (suppressed: 0 from 0)
+==189== Memcheck, a memory error detector
+==189== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==189== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==189== Command: ./test-eval inp.3.txt
+==189== Parent PID: 188
+==189== 
+==189== Invalid read of size 4
+==189==    at 0x402312: compare_hands (eval.c:317)
+==189==    by 0x40324B: main (test-eval.c:124)
+==189==  Address 0x5206e18 is 0 bytes after a block of size 8 alloc'd
+==189==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==189==    by 0x401198: add_card_to (deck-c4.c:30)
+==189==    by 0x403A1F: hand_from_string (input.c:49)
+==189==    by 0x40321F: main (test-eval.c:122)
+==189== 
+==189== Invalid read of size 4
+==189==    at 0x402325: compare_hands (eval.c:317)
+==189==    by 0x40324B: main (test-eval.c:124)
+==189==  Address 0x52071c8 is 0 bytes after a block of size 8 alloc'd
+==189==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==189==    by 0x401198: add_card_to (deck-c4.c:30)
+==189==    by 0x403A1F: hand_from_string (input.c:49)
+==189==    by 0x403234: main (test-eval.c:123)
+==189== 
+==189== Invalid read of size 4
+==189==    at 0x402343: compare_hands (eval.c:318)
+==189==    by 0x40324B: main (test-eval.c:124)
+==189==  Address 0x5206e18 is 0 bytes after a block of size 8 alloc'd
+==189==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==189==    by 0x401198: add_card_to (deck-c4.c:30)
+==189==    by 0x403A1F: hand_from_string (input.c:49)
+==189==    by 0x40321F: main (test-eval.c:122)
+==189== 
+==189== Invalid read of size 4
+==189==    at 0x402356: compare_hands (eval.c:318)
+==189==    by 0x40324B: main (test-eval.c:124)
+==189==  Address 0x52071c8 is 0 bytes after a block of size 8 alloc'd
+==189==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==189==    by 0x401198: add_card_to (deck-c4.c:30)
+==189==    by 0x403A1F: hand_from_string (input.c:49)
+==189==    by 0x403234: main (test-eval.c:123)
+==189== 
+==189== 
+==189== HEAP SUMMARY:
+==189==     in use at exit: 0 bytes in 0 blocks
+==189==   total heap usage: 544 allocs, 544 frees, 18,344 bytes allocated
+==189== 
+==189== All heap blocks were freed -- no leaks are possible
+==189== 
+==189== For counts of detected and suppressed errors, rerun with: -v
+==189== ERROR SUMMARY: 80 errors from 4 contexts (suppressed: 0 from 0)
 Testcase 4: Trying hands with 3 of a kind
 Valgrind returned an error status
-==450== Memcheck, a memory error detector
-==450== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==450== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==450== Command: ./test-eval inp.4.txt
-==450== Parent PID: 449
-==450== 
-==450== Invalid read of size 4
-==450==    at 0x402312: compare_hands (eval.c:317)
-==450==    by 0x40322E: main (test-eval.c:124)
-==450==  Address 0x52082f8 is 0 bytes after a block of size 8 alloc'd
-==450==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==450==    by 0x401198: add_card_to (deck-c4.c:30)
-==450==    by 0x403A02: hand_from_string (input.c:49)
-==450==    by 0x403202: main (test-eval.c:122)
-==450== 
-==450== Invalid read of size 4
-==450==    at 0x402325: compare_hands (eval.c:317)
-==450==    by 0x40322E: main (test-eval.c:124)
-==450==  Address 0x5208768 is 0 bytes after a block of size 8 alloc'd
-==450==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==450==    by 0x401198: add_card_to (deck-c4.c:30)
-==450==    by 0x403A02: hand_from_string (input.c:49)
-==450==    by 0x403217: main (test-eval.c:123)
-==450== 
-==450== Invalid read of size 4
-==450==    at 0x402343: compare_hands (eval.c:318)
-==450==    by 0x40322E: main (test-eval.c:124)
-==450==  Address 0x52082f8 is 0 bytes after a block of size 8 alloc'd
-==450==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==450==    by 0x401198: add_card_to (deck-c4.c:30)
-==450==    by 0x403A02: hand_from_string (input.c:49)
-==450==    by 0x403202: main (test-eval.c:122)
-==450== 
-==450== Invalid read of size 4
-==450==    at 0x402356: compare_hands (eval.c:318)
-==450==    by 0x40322E: main (test-eval.c:124)
-==450==  Address 0x5208768 is 0 bytes after a block of size 8 alloc'd
-==450==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==450==    by 0x401198: add_card_to (deck-c4.c:30)
-==450==    by 0x403A02: hand_from_string (input.c:49)
-==450==    by 0x403217: main (test-eval.c:123)
-==450== 
-==450== 
-==450== HEAP SUMMARY:
-==450==     in use at exit: 0 bytes in 0 blocks
-==450==   total heap usage: 352 allocs, 352 frees, 15,296 bytes allocated
-==450== 
-==450== All heap blocks were freed -- no leaks are possible
-==450== 
-==450== For counts of detected and suppressed errors, rerun with: -v
-==450== ERROR SUMMARY: 64 errors from 4 contexts (suppressed: 0 from 0)
+==194== Memcheck, a memory error detector
+==194== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==194== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==194== Command: ./test-eval inp.4.txt
+==194== Parent PID: 193
+==194== 
+==194== Invalid read of size 4
+==194==    at 0x402312: compare_hands (eval.c:317)
+==194==    by 0x40324B: main (test-eval.c:124)
+==194==  Address 0x52082f8 is 0 bytes after a block of size 8 alloc'd
+==194==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==194==    by 0x401198: add_card_to (deck-c4.c:30)
+==194==    by 0x403A1F: hand_from_string (input.c:49)
+==194==    by 0x40321F: main (test-eval.c:122)
+==194== 
+==194== Invalid read of size 4
+==194==    at 0x402325: compare_hands (eval.c:317)
+==194==    by 0x40324B: main (test-eval.c:124)
+==194==  Address 0x5208768 is 0 bytes after a block of size 8 alloc'd
+==194==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==194==    by 0x401198: add_card_to (deck-c4.c:30)
+==194==    by 0x403A1F: hand_from_string (input.c:49)
+==194==    by 0x403234: main (test-eval.c:123)
+==194== 
+==194== Invalid read of size 4
+==194==    at 0x402343: compare_hands (eval.c:318)
+==194==    by 0x40324B: main (test-eval.c:124)
+==194==  Address 0x52082f8 is 0 bytes after a block of size 8 alloc'd
+==194==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==194==    by 0x401198: add_card_to (deck-c4.c:30)
+==194==    by 0x403A1F: hand_from_string (input.c:49)
+==194==    by 0x40321F: main (test-eval.c:122)
+==194== 
+==194== Invalid read of size 4
+==194==    at 0x402356: compare_hands (eval.c:318)
+==194==    by 0x40324B: main (test-eval.c:124)
+==194==  Address 0x5208768 is 0 bytes after a block of size 8 alloc'd
+==194==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==194==    by 0x401198: add_card_to (deck-c4.c:30)
+==194==    by 0x403A1F: hand_from_string (input.c:49)
+==194==    by 0x403234: main (test-eval.c:123)
+==194== 
+==194== 
+==194== HEAP SUMMARY:
+==194==     in use at exit: 0 bytes in 0 blocks
+==194==   total heap usage: 352 allocs, 352 frees, 15,296 bytes allocated
+==194== 
+==194== All heap blocks were freed -- no leaks are possible
+==194== 
+==194== For counts of detected and suppressed errors, rerun with: -v
+==194== ERROR SUMMARY: 64 errors from 4 contexts (suppressed: 0 from 0)
 Testcase 5: Trying hands with straights
 Valgrind returned an error status
-==455== Memcheck, a memory error detector
-==455== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==455== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==455== Command: ./test-eval inp.5.txt
-==455== Parent PID: 454
-==455== 
-==455== Invalid read of size 4
-==455==    at 0x402312: compare_hands (eval.c:317)
-==455==    by 0x40322E: main (test-eval.c:124)
-==455==  Address 0x520d8d8 is 0 bytes after a block of size 8 alloc'd
-==455==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==455==    by 0x401198: add_card_to (deck-c4.c:30)
-==455==    by 0x403A02: hand_from_string (input.c:49)
-==455==    by 0x403202: main (test-eval.c:122)
-==455== 
-==455== Invalid read of size 4
-==455==    at 0x402325: compare_hands (eval.c:317)
-==455==    by 0x40322E: main (test-eval.c:124)
-==455==  Address 0x520dee8 is 0 bytes after a block of size 8 alloc'd
-==455==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==455==    by 0x401198: add_card_to (deck-c4.c:30)
-==455==    by 0x403A02: hand_from_string (input.c:49)
-==455==    by 0x403217: main (test-eval.c:123)
-==455== 
-==455== Invalid read of size 4
-==455==    at 0x402343: compare_hands (eval.c:318)
-==455==    by 0x40322E: main (test-eval.c:124)
-==455==  Address 0x520d8d8 is 0 bytes after a block of size 8 alloc'd
-==455==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==455==    by 0x401198: add_card_to (deck-c4.c:30)
-==455==    by 0x403A02: hand_from_string (input.c:49)
-==455==    by 0x403202: main (test-eval.c:122)
-==455== 
-==455== Invalid read of size 4
-==455==    at 0x402356: compare_hands (eval.c:318)
-==455==    by 0x40322E: main (test-eval.c:124)
-==455==  Address 0x520dee8 is 0 bytes after a block of size 8 alloc'd
-==455==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==455==    by 0x401198: add_card_to (deck-c4.c:30)
-==455==    by 0x403A02: hand_from_string (input.c:49)
-==455==    by 0x403217: main (test-eval.c:123)
-==455== 
-==455== 
-==455== HEAP SUMMARY:
-==455==     in use at exit: 0 bytes in 0 blocks
-==455==   total heap usage: 360 allocs, 360 frees, 15,704 bytes allocated
-==455== 
-==455== All heap blocks were freed -- no leaks are possible
-==455== 
-==455== For counts of detected and suppressed errors, rerun with: -v
-==455== ERROR SUMMARY: 16 errors from 4 contexts (suppressed: 0 from 0)
+==199== Memcheck, a memory error detector
+==199== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==199== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==199== Command: ./test-eval inp.5.txt
+==199== Parent PID: 198
+==199== 
+==199== Use of uninitialised value of size 8
+==199==    at 0x400C17: print_hand (deck.c:10)
+==199==    by 0x402FF6: describe_hand (test-eval.c:74)
+==199==    by 0x4031D6: main (test-eval.c:116)
+==199== 
+==199== Use of uninitialised value of size 8
+==199==    at 0x400C31: print_hand (deck.c:11)
+==199==    by 0x402FF6: describe_hand (test-eval.c:74)
+==199==    by 0x4031D6: main (test-eval.c:116)
+==199== 
+==199== 
+==199== Process terminating with default action of signal 6 (SIGABRT): dumping core
+==199==    at 0x4E6F428: raise (raise.c:54)
+==199==    by 0x4E71029: abort (abort.c:89)
+==199==    by 0x4E67BD6: __assert_fail_base (assert.c:92)
+==199==    by 0x4E67C81: __assert_fail (assert.c:101)
+==199==    by 0x4034BE: suit_letter (cards.c:69)
+==199==    by 0x403519: print_card (cards.c:79)
+==199==    by 0x400C42: print_hand (deck.c:12)
+==199==    by 0x402FF6: describe_hand (test-eval.c:74)
+==199==    by 0x4031D6: main (test-eval.c:116)
+==199== 
+==199== HEAP SUMMARY:
+==199==     in use at exit: 864 bytes in 16 blocks
+==199==   total heap usage: 31 allocs, 15 frees, 9,785 bytes allocated
+==199== 
+==199== LEAK SUMMARY:
+==199==    definitely lost: 0 bytes in 0 blocks
+==199==    indirectly lost: 0 bytes in 0 blocks
+==199==      possibly lost: 0 bytes in 0 blocks
+==199==    still reachable: 864 bytes in 16 blocks
+==199==         suppressed: 0 bytes in 0 blocks
+==199== Rerun with --leak-check=full to see details of leaked memory
+==199== 
+==199== For counts of detected and suppressed errors, rerun with: -v
+==199== Use --track-origins=yes to see where uninitialised values come from
+==199== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
 Testcase 6: Trying hands with flushes
 Valgrind returned an error status
-==460== Memcheck, a memory error detector
-==460== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==460== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==460== Command: ./test-eval inp.6.txt
-==460== Parent PID: 459
-==460== 
-==460== Invalid read of size 4
-==460==    at 0x402312: compare_hands (eval.c:317)
-==460==    by 0x40322E: main (test-eval.c:124)
-==460==  Address 0x5206ef8 is 0 bytes after a block of size 8 alloc'd
-==460==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==460==    by 0x401198: add_card_to (deck-c4.c:30)
-==460==    by 0x403A02: hand_from_string (input.c:49)
-==460==    by 0x403202: main (test-eval.c:122)
-==460== 
-==460== Invalid read of size 4
-==460==    at 0x402325: compare_hands (eval.c:317)
-==460==    by 0x40322E: main (test-eval.c:124)
-==460==  Address 0x5207368 is 0 bytes after a block of size 8 alloc'd
-==460==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==460==    by 0x401198: add_card_to (deck-c4.c:30)
-==460==    by 0x403A02: hand_from_string (input.c:49)
-==460==    by 0x403217: main (test-eval.c:123)
-==460== 
-==460== Invalid read of size 4
-==460==    at 0x402343: compare_hands (eval.c:318)
-==460==    by 0x40322E: main (test-eval.c:124)
-==460==  Address 0x5206ef8 is 0 bytes after a block of size 8 alloc'd
-==460==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==460==    by 0x401198: add_card_to (deck-c4.c:30)
-==460==    by 0x403A02: hand_from_string (input.c:49)
-==460==    by 0x403202: main (test-eval.c:122)
-==460== 
-==460== Invalid read of size 4
-==460==    at 0x402356: compare_hands (eval.c:318)
-==460==    by 0x40322E: main (test-eval.c:124)
-==460==  Address 0x5207368 is 0 bytes after a block of size 8 alloc'd
-==460==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==460==    by 0x401198: add_card_to (deck-c4.c:30)
-==460==    by 0x403A02: hand_from_string (input.c:49)
-==460==    by 0x403217: main (test-eval.c:123)
-==460== 
-==460== 
-==460== HEAP SUMMARY:
-==460==     in use at exit: 0 bytes in 0 blocks
-==460==   total heap usage: 898 allocs, 898 frees, 25,784 bytes allocated
-==460== 
-==460== All heap blocks were freed -- no leaks are possible
-==460== 
-==460== For counts of detected and suppressed errors, rerun with: -v
-==460== ERROR SUMMARY: 192 errors from 4 contexts (suppressed: 0 from 0)
+==204== Memcheck, a memory error detector
+==204== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==204== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==204== Command: ./test-eval inp.6.txt
+==204== Parent PID: 203
+==204== 
+==204== Invalid read of size 4
+==204==    at 0x402312: compare_hands (eval.c:317)
+==204==    by 0x40324B: main (test-eval.c:124)
+==204==  Address 0x5206ef8 is 0 bytes after a block of size 8 alloc'd
+==204==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==204==    by 0x401198: add_card_to (deck-c4.c:30)
+==204==    by 0x403A1F: hand_from_string (input.c:49)
+==204==    by 0x40321F: main (test-eval.c:122)
+==204== 
+==204== Invalid read of size 4
+==204==    at 0x402325: compare_hands (eval.c:317)
+==204==    by 0x40324B: main (test-eval.c:124)
+==204==  Address 0x5207368 is 0 bytes after a block of size 8 alloc'd
+==204==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==204==    by 0x401198: add_card_to (deck-c4.c:30)
+==204==    by 0x403A1F: hand_from_string (input.c:49)
+==204==    by 0x403234: main (test-eval.c:123)
+==204== 
+==204== Invalid read of size 4
+==204==    at 0x402343: compare_hands (eval.c:318)
+==204==    by 0x40324B: main (test-eval.c:124)
+==204==  Address 0x5206ef8 is 0 bytes after a block of size 8 alloc'd
+==204==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==204==    by 0x401198: add_card_to (deck-c4.c:30)
+==204==    by 0x403A1F: hand_from_string (input.c:49)
+==204==    by 0x40321F: main (test-eval.c:122)
+==204== 
+==204== Invalid read of size 4
+==204==    at 0x402356: compare_hands (eval.c:318)
+==204==    by 0x40324B: main (test-eval.c:124)
+==204==  Address 0x5207368 is 0 bytes after a block of size 8 alloc'd
+==204==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==204==    by 0x401198: add_card_to (deck-c4.c:30)
+==204==    by 0x403A1F: hand_from_string (input.c:49)
+==204==    by 0x403234: main (test-eval.c:123)
+==204== 
+==204== 
+==204== HEAP SUMMARY:
+==204==     in use at exit: 0 bytes in 0 blocks
+==204==   total heap usage: 898 allocs, 898 frees, 25,784 bytes allocated
+==204== 
+==204== All heap blocks were freed -- no leaks are possible
+==204== 
+==204== For counts of detected and suppressed errors, rerun with: -v
+==204== ERROR SUMMARY: 192 errors from 4 contexts (suppressed: 0 from 0)
 Testcase 7: Trying hands with full houses
 Valgrind returned an error status
-==465== Memcheck, a memory error detector
-==465== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==465== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==465== Command: ./test-eval inp.7.txt
-==465== Parent PID: 464
-==465== 
-==465== Invalid read of size 4
-==465==    at 0x402312: compare_hands (eval.c:317)
-==465==    by 0x40322E: main (test-eval.c:124)
-==465==  Address 0x52071e8 is 0 bytes after a block of size 8 alloc'd
-==465==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==465==    by 0x401198: add_card_to (deck-c4.c:30)
-==465==    by 0x403A02: hand_from_string (input.c:49)
-==465==    by 0x403202: main (test-eval.c:122)
-==465== 
-==465== Invalid read of size 4
-==465==    at 0x402325: compare_hands (eval.c:317)
-==465==    by 0x40322E: main (test-eval.c:124)
-==465==  Address 0x5207728 is 0 bytes after a block of size 8 alloc'd
-==465==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==465==    by 0x401198: add_card_to (deck-c4.c:30)
-==465==    by 0x403A02: hand_from_string (input.c:49)
-==465==    by 0x403217: main (test-eval.c:123)
-==465== 
-==465== Invalid read of size 4
-==465==    at 0x402343: compare_hands (eval.c:318)
-==465==    by 0x40322E: main (test-eval.c:124)
-==465==  Address 0x52071e8 is 0 bytes after a block of size 8 alloc'd
-==465==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==465==    by 0x401198: add_card_to (deck-c4.c:30)
-==465==    by 0x403A02: hand_from_string (input.c:49)
-==465==    by 0x403202: main (test-eval.c:122)
-==465== 
-==465== Invalid read of size 4
-==465==    at 0x402356: compare_hands (eval.c:318)
-==465==    by 0x40322E: main (test-eval.c:124)
-==465==  Address 0x5207728 is 0 bytes after a block of size 8 alloc'd
-==465==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==465==    by 0x401198: add_card_to (deck-c4.c:30)
-==465==    by 0x403A02: hand_from_string (input.c:49)
-==465==    by 0x403217: main (test-eval.c:123)
-==465== 
-==465== 
-==465== HEAP SUMMARY:
-==465==     in use at exit: 0 bytes in 0 blocks
-==465==   total heap usage: 636 allocs, 636 frees, 21,404 bytes allocated
-==465== 
-==465== All heap blocks were freed -- no leaks are possible
-==465== 
-==465== For counts of detected and suppressed errors, rerun with: -v
-==465== ERROR SUMMARY: 32 errors from 4 contexts (suppressed: 0 from 0)
+==209== Memcheck, a memory error detector
+==209== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==209== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==209== Command: ./test-eval inp.7.txt
+==209== Parent PID: 208
+==209== 
+==209== Invalid read of size 4
+==209==    at 0x402312: compare_hands (eval.c:317)
+==209==    by 0x40324B: main (test-eval.c:124)
+==209==  Address 0x52071e8 is 0 bytes after a block of size 8 alloc'd
+==209==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==209==    by 0x401198: add_card_to (deck-c4.c:30)
+==209==    by 0x403A1F: hand_from_string (input.c:49)
+==209==    by 0x40321F: main (test-eval.c:122)
+==209== 
+==209== Invalid read of size 4
+==209==    at 0x402325: compare_hands (eval.c:317)
+==209==    by 0x40324B: main (test-eval.c:124)
+==209==  Address 0x5207728 is 0 bytes after a block of size 8 alloc'd
+==209==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==209==    by 0x401198: add_card_to (deck-c4.c:30)
+==209==    by 0x403A1F: hand_from_string (input.c:49)
+==209==    by 0x403234: main (test-eval.c:123)
+==209== 
+==209== Invalid read of size 4
+==209==    at 0x402343: compare_hands (eval.c:318)
+==209==    by 0x40324B: main (test-eval.c:124)
+==209==  Address 0x52071e8 is 0 bytes after a block of size 8 alloc'd
+==209==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==209==    by 0x401198: add_card_to (deck-c4.c:30)
+==209==    by 0x403A1F: hand_from_string (input.c:49)
+==209==    by 0x40321F: main (test-eval.c:122)
+==209== 
+==209== Invalid read of size 4
+==209==    at 0x402356: compare_hands (eval.c:318)
+==209==    by 0x40324B: main (test-eval.c:124)
+==209==  Address 0x5207728 is 0 bytes after a block of size 8 alloc'd
+==209==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==209==    by 0x401198: add_card_to (deck-c4.c:30)
+==209==    by 0x403A1F: hand_from_string (input.c:49)
+==209==    by 0x403234: main (test-eval.c:123)
+==209== 
+==209== 
+==209== HEAP SUMMARY:
+==209==     in use at exit: 0 bytes in 0 blocks
+==209==   total heap usage: 636 allocs, 636 frees, 21,404 bytes allocated
+==209== 
+==209== All heap blocks were freed -- no leaks are possible
+==209== 
+==209== For counts of detected and suppressed errors, rerun with: -v
+==209== ERROR SUMMARY: 32 errors from 4 contexts (suppressed: 0 from 0)
 Testcase 8: Trying hands with 4 of a kind
 Valgrind returned an error status
-==470== Memcheck, a memory error detector
-==470== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==470== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==470== Command: ./test-eval inp.8.txt
-==470== Parent PID: 469
-==470== 
-==470== Invalid read of size 4
-==470==    at 0x402312: compare_hands (eval.c:317)
-==470==    by 0x40322E: main (test-eval.c:124)
-==470==  Address 0x5207048 is 0 bytes after a block of size 8 alloc'd
-==470==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==470==    by 0x401198: add_card_to (deck-c4.c:30)
-==470==    by 0x403A02: hand_from_string (input.c:49)
-==470==    by 0x403202: main (test-eval.c:122)
-==470== 
-==470== Invalid read of size 4
-==470==    at 0x402325: compare_hands (eval.c:317)
-==470==    by 0x40322E: main (test-eval.c:124)
-==470==  Address 0x52074b8 is 0 bytes after a block of size 8 alloc'd
-==470==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==470==    by 0x401198: add_card_to (deck-c4.c:30)
-==470==    by 0x403A02: hand_from_string (input.c:49)
-==470==    by 0x403217: main (test-eval.c:123)
-==470== 
-==470== Invalid read of size 4
-==470==    at 0x402343: compare_hands (eval.c:318)
-==470==    by 0x40322E: main (test-eval.c:124)
-==470==  Address 0x5207048 is 0 bytes after a block of size 8 alloc'd
-==470==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==470==    by 0x401198: add_card_to (deck-c4.c:30)
-==470==    by 0x403A02: hand_from_string (input.c:49)
-==470==    by 0x403202: main (test-eval.c:122)
-==470== 
-==470== Invalid read of size 4
-==470==    at 0x402356: compare_hands (eval.c:318)
-==470==    by 0x40322E: main (test-eval.c:124)
-==470==  Address 0x52074b8 is 0 bytes after a block of size 8 alloc'd
-==470==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==470==    by 0x401198: add_card_to (deck-c4.c:30)
-==470==    by 0x403A02: hand_from_string (input.c:49)
-==470==    by 0x403217: main (test-eval.c:123)
-==470== 
-==470== 
-==470== HEAP SUMMARY:
-==470==     in use at exit: 0 bytes in 0 blocks
-==470==   total heap usage: 352 allocs, 352 frees, 15,296 bytes allocated
-==470== 
-==470== All heap blocks were freed -- no leaks are possible
-==470== 
-==470== For counts of detected and suppressed errors, rerun with: -v
-==470== ERROR SUMMARY: 64 errors from 4 contexts (suppressed: 0 from 0)
+==214== Memcheck, a memory error detector
+==214== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==214== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==214== Command: ./test-eval inp.8.txt
+==214== Parent PID: 213
+==214== 
+==214== Invalid read of size 4
+==214==    at 0x402312: compare_hands (eval.c:317)
+==214==    by 0x40324B: main (test-eval.c:124)
+==214==  Address 0x5207048 is 0 bytes after a block of size 8 alloc'd
+==214==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==214==    by 0x401198: add_card_to (deck-c4.c:30)
+==214==    by 0x403A1F: hand_from_string (input.c:49)
+==214==    by 0x40321F: main (test-eval.c:122)
+==214== 
+==214== Invalid read of size 4
+==214==    at 0x402325: compare_hands (eval.c:317)
+==214==    by 0x40324B: main (test-eval.c:124)
+==214==  Address 0x52074b8 is 0 bytes after a block of size 8 alloc'd
+==214==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==214==    by 0x401198: add_card_to (deck-c4.c:30)
+==214==    by 0x403A1F: hand_from_string (input.c:49)
+==214==    by 0x403234: main (test-eval.c:123)
+==214== 
+==214== Invalid read of size 4
+==214==    at 0x402343: compare_hands (eval.c:318)
+==214==    by 0x40324B: main (test-eval.c:124)
+==214==  Address 0x5207048 is 0 bytes after a block of size 8 alloc'd
+==214==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==214==    by 0x401198: add_card_to (deck-c4.c:30)
+==214==    by 0x403A1F: hand_from_string (input.c:49)
+==214==    by 0x40321F: main (test-eval.c:122)
+==214== 
+==214== Invalid read of size 4
+==214==    at 0x402356: compare_hands (eval.c:318)
+==214==    by 0x40324B: main (test-eval.c:124)
+==214==  Address 0x52074b8 is 0 bytes after a block of size 8 alloc'd
+==214==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==214==    by 0x401198: add_card_to (deck-c4.c:30)
+==214==    by 0x403A1F: hand_from_string (input.c:49)
+==214==    by 0x403234: main (test-eval.c:123)
+==214== 
+==214== 
+==214== HEAP SUMMARY:
+==214==     in use at exit: 0 bytes in 0 blocks
+==214==   total heap usage: 352 allocs, 352 frees, 15,296 bytes allocated
+==214== 
+==214== All heap blocks were freed -- no leaks are possible
+==214== 
+==214== For counts of detected and suppressed errors, rerun with: -v
+==214== ERROR SUMMARY: 64 errors from 4 contexts (suppressed: 0 from 0)
 Testcase 9: Trying hands with straight flushes
- Checking the output 
-Line_54_did_not_match
-Line_57_did_not_match
-Line_63_did_not_match
-Your file did not match the expected ouput
- - Output did not match, testcase failed
-Hand 1:								Hand 1:
---------							--------
-As Ks Qs Js 0s 							As Ks Qs Js 0s 
- - Flush in suit s						 - Flush in suit s
- - Straight flush at index 0					 - Straight flush at index 0
- - The most of a kind is 1 of a kind (at index 0 / value A)	 - The most of a kind is 1 of a kind (at index 0 / value A)
- - No secondary pair						 - No secondary pair
- - evaluate_hand's ranking: STRAIGHT_FLUSH			 - evaluate_hand's ranking: STRAIGHT_FLUSH
- - 5 cards used for hand: As Ks Qs Js 0s 			 - 5 cards used for hand: As Ks Qs Js 0s 
-Hand 2:								Hand 2:
---------							--------
-Kh Qh Jh 0h 9h 							Kh Qh Jh 0h 9h 
- - Flush in suit h						 - Flush in suit h
- - Straight flush at index 0					 - Straight flush at index 0
- - The most of a kind is 1 of a kind (at index 0 / value K)	 - The most of a kind is 1 of a kind (at index 0 / value K)
- - No secondary pair						 - No secondary pair
- - evaluate_hand's ranking: STRAIGHT_FLUSH			 - evaluate_hand's ranking: STRAIGHT_FLUSH
- - 5 cards used for hand: Kh Qh Jh 0h 9h 			 - 5 cards used for hand: Kh Qh Jh 0h 9h 
-Comparison : 							Comparison : 
---------------							--------------
-Hand 1 wins!							Hand 1 wins!
-============================					============================
-Hand 1:								Hand 1:
---------							--------
-As Ks Qs Js 0s 9s 8s 						As Ks Qs Js 0s 9s 8s 
- - Flush in suit s						 - Flush in suit s
- - Straight flush at index 0					 - Straight flush at index 0
- - Straight flush at index 1					 - Straight flush at index 1
- - Straight flush at index 2					 - Straight flush at index 2
- - The most of a kind is 1 of a kind (at index 0 / value A)	 - The most of a kind is 1 of a kind (at index 0 / value A)
- - No secondary pair						 - No secondary pair
- - evaluate_hand's ranking: STRAIGHT_FLUSH			 - evaluate_hand's ranking: STRAIGHT_FLUSH
- - 5 cards used for hand: As Ks Qs Js 0s 			 - 5 cards used for hand: As Ks Qs Js 0s 
-Hand 2:								Hand 2:
---------							--------
-Kh Qh Jh 0h 9h 8h 7h 						Kh Qh Jh 0h 9h 8h 7h 
- - Flush in suit h						 - Flush in suit h
- - Straight flush at index 0					 - Straight flush at index 0
- - Straight flush at index 1					 - Straight flush at index 1
- - Straight flush at index 2					 - Straight flush at index 2
- - The most of a kind is 1 of a kind (at index 0 / value K)	 - The most of a kind is 1 of a kind (at index 0 / value K)
- - No secondary pair						 - No secondary pair
- - evaluate_hand's ranking: STRAIGHT_FLUSH			 - evaluate_hand's ranking: STRAIGHT_FLUSH
- - 5 cards used for hand: Kh Qh Jh 0h 9h 			 - 5 cards used for hand: Kh Qh Jh 0h 9h 
-Comparison : 							Comparison : 
---------------							--------------
-Hand 1 wins!							Hand 1 wins!
-============================					============================
-Hand 1:								Hand 1:
---------							--------
-Ac As Kc Ks Qs Js 0s 						Ac As Kc Ks Qs Js 0s 
- - Flush in suit s						 - Flush in suit s
- - Straight at index 0						 - Straight at index 0
- - Straight flush at index 1				      |	 - Straight at index 1
- - The most of a kind is 2 of a kind (at index 0 / value A)	 - The most of a kind is 2 of a kind (at index 0 / value A)
- - Secondary pair at index 2 (value K)				 - Secondary pair at index 2 (value K)
- - evaluate_hand's ranking: STRAIGHT_FLUSH		      |	 - evaluate_hand's ranking: FLUSH
- - 5 cards used for hand: As Ks Qs Js 0s 			 - 5 cards used for hand: As Ks Qs Js 0s 
-Hand 2:								Hand 2:
---------							--------
-Ad Kh Qh Jh Js 0h 9h 						Ad Kh Qh Jh Js 0h 9h 
- - Flush in suit h						 - Flush in suit h
- - Straight at index 0					      <
- - Straight flush at index 1				      <
- - The most of a kind is 2 of a kind (at index 3 / value J)   <
- - No secondary pair					      <
- - evaluate_hand's ranking: STRAIGHT_FLUSH		      <
- - 5 cards used for hand: Kh Qh Jh 0h 9h 		      <
-Comparison : 						      <
---------------						      <
-Hand 1 wins!						      <
-============================				      <
-Hand 1:							      <
---------						      <
-Ah Kc 5h 4h 3h 2h 					      <
- - Flush in suit h					      <
- - Straight flush at index 0				      <
- - The most of a kind is 1 of a kind (at index 0 / value A)   <
- - No secondary pair					      <
- - evaluate_hand's ranking: STRAIGHT_FLUSH		      <
- - 5 cards used for hand: 5h 4h 3h 2h Ah 		      <
-Hand 2:							      <
---------						      <
-Ac 6c 5c 4c 3c 2c 					      <
- - Flush in suit c					      <
- - Straight flush at index 0					 - Straight flush at index 0
- - Straight flush at index 1					 - Straight flush at index 1
- - The most of a kind is 1 of a kind (at index 0 / value A)   |	 - The most of a kind is 2 of a kind (at index 3 / value J)
- - No secondary pair					      <
- - evaluate_hand's ranking: STRAIGHT_FLUSH		      <
- - 5 cards used for hand: 5c 4c 3c 2c Ac 		      <
-Comparison : 						      <
---------------						      <
-Tie							      <
-============================				      <
-Hand 1:							      <
---------						      <
-As Ks Qs Js 0s 						      <
- - Flush in suit s					      <
- - Straight flush at index 0				      <
- - The most of a kind is 1 of a kind (at index 0 / value A)   <
- - No secondary pair					      <
- - evaluate_hand's ranking: STRAIGHT_FLUSH		      <
- - 5 cards used for hand: As Ks Qs Js 0s 		      <
-Hand 2:							      <
---------						      <
-As 5s 4s 3s 2s 						      <
- - Flush in suit s					      <
- - Straight flush at index 0				      <
- - The most of a kind is 1 of a kind (at index 0 / value A)   <
- - No secondary pair						 - No secondary pair
- - evaluate_hand's ranking: STRAIGHT_FLUSH		      <
- - 5 cards used for hand: 5s 4s 3s 2s As 		      <
-Comparison : 						      <
---------------						      <
-Hand 1 wins!						      <
-============================				      <
+Valgrind returned an error status
+==219== Memcheck, a memory error detector
+==219== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==219== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==219== Command: ./test-eval inp.9.txt
+==219== Parent PID: 218
+==219== 
+==219== Use of uninitialised value of size 8
+==219==    at 0x400C17: print_hand (deck.c:10)
+==219==    by 0x402FF6: describe_hand (test-eval.c:74)
+==219==    by 0x4031F6: main (test-eval.c:119)
+==219== 
+==219== Use of uninitialised value of size 8
+==219==    at 0x400C31: print_hand (deck.c:11)
+==219==    by 0x402FF6: describe_hand (test-eval.c:74)
+==219==    by 0x4031F6: main (test-eval.c:119)
+==219== 
+==219== 
+==219== Process terminating with default action of signal 6 (SIGABRT): dumping core
+==219==    at 0x4E6F428: raise (raise.c:54)
+==219==    by 0x4E71029: abort (abort.c:89)
+==219==    by 0x4E67BD6: __assert_fail_base (assert.c:92)
+==219==    by 0x4E67C81: __assert_fail (assert.c:101)
+==219==    by 0x4034BE: suit_letter (cards.c:69)
+==219==    by 0x403519: print_card (cards.c:79)
+==219==    by 0x400C42: print_hand (deck.c:12)
+==219==    by 0x402FF6: describe_hand (test-eval.c:74)
+==219==    by 0x4031F6: main (test-eval.c:119)
+==219== 
+==219== HEAP SUMMARY:
+==219==     in use at exit: 928 bytes in 20 blocks
+==219==   total heap usage: 148 allocs, 128 frees, 12,053 bytes allocated
+==219== 
+==219== LEAK SUMMARY:
+==219==    definitely lost: 0 bytes in 0 blocks
+==219==    indirectly lost: 0 bytes in 0 blocks
+==219==      possibly lost: 0 bytes in 0 blocks
+==219==    still reachable: 928 bytes in 20 blocks
+==219==         suppressed: 0 bytes in 0 blocks
+==219== Rerun with --leak-check=full to see details of leaked memory
+==219== 
+==219== For counts of detected and suppressed errors, rerun with: -v
+==219== Use --track-origins=yes to see where uninitialised values come from
+==219== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
 Testcase 10: Trying each type of hand ranking
- Checking the output 
-Your file matched the expected output
- - Testcase passed
+Valgrind returned an error status
+==224== Memcheck, a memory error detector
+==224== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==224== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==224== Command: ./test-eval inp.10.txt
+==224== Parent PID: 223
+==224== 
+==224== Use of uninitialised value of size 8
+==224==    at 0x400C17: print_hand (deck.c:10)
+==224==    by 0x402FF6: describe_hand (test-eval.c:74)
+==224==    by 0x4031F6: main (test-eval.c:119)
+==224== 
+==224== Use of uninitialised value of size 8
+==224==    at 0x400C31: print_hand (deck.c:11)
+==224==    by 0x402FF6: describe_hand (test-eval.c:74)
+==224==    by 0x4031F6: main (test-eval.c:119)
+==224== 
+==224== 
+==224== Process terminating with default action of signal 6 (SIGABRT): dumping core
+==224==    at 0x4E6F428: raise (raise.c:54)
+==224==    by 0x4E71029: abort (abort.c:89)
+==224==    by 0x4E67BD6: __assert_fail_base (assert.c:92)
+==224==    by 0x4E67C81: __assert_fail (assert.c:101)
+==224==    by 0x4034BE: suit_letter (cards.c:69)
+==224==    by 0x403519: print_card (cards.c:79)
+==224==    by 0x400C42: print_hand (deck.c:12)
+==224==    by 0x402FF6: describe_hand (test-eval.c:74)
+==224==    by 0x4031F6: main (test-eval.c:119)
+==224== 
+==224== HEAP SUMMARY:
+==224==     in use at exit: 880 bytes in 17 blocks
+==224==   total heap usage: 319 allocs, 302 frees, 15,101 bytes allocated
+==224== 
+==224== LEAK SUMMARY:
+==224==    definitely lost: 0 bytes in 0 blocks
+==224==    indirectly lost: 0 bytes in 0 blocks
+==224==      possibly lost: 0 bytes in 0 blocks
+==224==    still reachable: 880 bytes in 17 blocks
+==224==         suppressed: 0 bytes in 0 blocks
+==224== Rerun with --leak-check=full to see details of leaked memory
+==224== 
+==224== For counts of detected and suppressed errors, rerun with: -v
+==224== Use --track-origins=yes to see where uninitialised values come from
+==224== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
 
 Overall Grade: F
