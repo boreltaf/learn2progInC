@@ -174,7 +174,7 @@ int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
     while((((*(*hand).cards[k+1]).value) == (((*(*hand).cards[k]).value) - 1))||(((*(*hand).cards[k+1]).value) == ((*(*hand).cards[k]).value))){
       card_t n_card = (*(*hand).cards[k+1]);
       card_t c_card = (*(*hand).cards[k]);
-      if((n_card.value == c_card.value - 1)&&(n_card.suit==fs)){
+      if(n_card.suit==fs){
 	count++;
       }
       else if((n_card.value == c_card.value - 1)&&(!(n_card.suit == fs))){
