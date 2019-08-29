@@ -384,7 +384,9 @@ int find_straight(deck_t * hand, suit_t fs, hand_eval_t * ans) {
 	copy_straight(ans->cards, hand, cpind, fs,4) ;
       }
       else {
+	if(hand->cards[i]->suit == fs){
 	copy_straight(ans->cards, hand, i, fs,5);
+	}
       }
       return 1;
     }
