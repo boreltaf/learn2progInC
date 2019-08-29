@@ -125,10 +125,18 @@ int  straight_starting_at( deck_t *hand, size_t index){
 
 int is_there_ACE_low( deck_t *hand, size_t index){
   if(index >= hand->n_cards - 3){ return 0;}
-    if( (hand->cards[index]->value) == 5){
+    if( (hand->cards[index]->value) == 14){
       size_t k=index;
+      for(int v=0; v<hand->n_cards; v++){
+	if(hand->cards[v]->value == 5){
+	  k = v;
+	  break;
+	}
+      }
+      if( k+1 >= hand->n_cards){ return 0;}
+      if( k == index ){ return 0;}
       int count = 1;
-      while((((hand->cards[k+1]->value) == ((hand->cards[k]->value) - 1))||(hand->cards[k]->value == hand->cards[k+1]->value))){
+      while(((hand->cards[k+1]->value) == ((hand->cards[k]->value) - 1))||(hand->cards[k]->value == hand->cards[k+1]->value)){
 	if((hand->cards[k+1]->value) == (hand->cards[k]->value - 1)){
 	  count++;
 	}
@@ -136,15 +144,15 @@ int is_there_ACE_low( deck_t *hand, size_t index){
 	if( k+1 >= hand->n_cards){ break ;}
       }
       if(count >= 4){
-	int count3=0;
+	/*int count3=0;
 	for(int v=0; v<4; v++){
 	  if((hand->cards[v]->value) == 14){
 	    count3++;
 	  }
 	}
-	if(count3 >0){ return -1;}
-	}
-	return 0;
+	if(count3 >0){*/
+	return -1;
+      }
     }
   return 0;
 }
