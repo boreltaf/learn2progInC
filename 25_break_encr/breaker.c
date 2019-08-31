@@ -13,9 +13,6 @@ int main(int argc, char **argv){
   for(int i=0; i<26; i++){  // we fill this array with lower case alphabet letters.
     arr_alpha[i]= 'a'+i;
   }
-  if(argc == 1){ fprintf(stderr," you enter one argc. The program takes 2 arguments\n");
-    return EXIT_FAILURE;
-  }
   if(argc != 2){ fprintf(stderr,"The program only takes 3 arguments\n");
     return EXIT_FAILURE;
   }
@@ -43,10 +40,7 @@ int main(int argc, char **argv){
       ind = i;
     }
   }
-  int q;
-  q = ind + 22;
-  key = q%26;
-  assert(max !=0);
+  key = (ind + 22)%26;
   fprintf(stdout,"%d\n", key);
   if(fclose(f)!=0){
     printf("failed to close the file\n");
