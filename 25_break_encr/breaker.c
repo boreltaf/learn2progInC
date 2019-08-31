@@ -13,6 +13,12 @@ int main(int argc, char **argv){
   for(int i=0; i<26; i++){  // we fill this array with lower case alphabet letters.
     arr_alpha[i]= 'a'+i;
   }
+  if(argc == 1){ fprintf(stderr," you enter one argc. The program only takes 3 arguments\n");
+    return EXIT_FAILURE;
+  }
+  if(argc == 2){ fprintf(stderr,"you entered two argc. The program only takes 3 arguments\n");
+    return EXIT_FAILURE;
+  }
   if(argc != 3){ fprintf(stderr,"The program only takes 3 arguments\n");
     return EXIT_FAILURE;
   }
