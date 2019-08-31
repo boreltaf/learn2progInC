@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <assert.h>
 
 int main(int argc, char **argv){
-  int key;
   unsigned count[26]={0};  // array that will contains the count of each letter in the alphabet found in the input.                         
   if(argc != 2){ fprintf(stderr,"The program only takes 3 arguments\n");
     return EXIT_FAILURE;
@@ -13,15 +13,13 @@ int main(int argc, char **argv){
     fprintf(stderr, "the file in not open\n");
     return EXIT_FAILURE;
   }
-  int c, i;
-  while( (c=fgetc(f)) != EOF){
+  int c, i, d;
+  while( (c = fgetc(f)) != EOF){
     if( isalpha(c)){
       c = tolower(c); // we will count base on the lower case. so we need to convert all uppercase to lowercase
-      for(i=0; i<26; i++){
-	if( c == ('a' + i)){
-	  count[i]++;         // we count the frequency of each letter found.
-	}
-      }
+      d = c - 'a';
+      assert((d>=0)&&(d<26));
+      count[d]++;         // we count the frequency of each letter found.
     }
   }
   unsigned max =0;
@@ -32,7 +30,7 @@ int main(int argc, char **argv){
       ind = i;
     }
   }
-  key = (ind + 22)%26;
+  int key = (ind + 22)%26;
   fprintf(stdout,"%d\n", key);
   if(fclose(f)!=0){
     printf("failed to close the file\n");
