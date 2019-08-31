@@ -6,7 +6,7 @@
 int main(int argc, char **argv){
   char arr_alpha[26];
   int key;
-  int count[26]={0};  // array that will contains the count of each letter in the alphabet found in the input.                         
+  unsigned count[26]={0};  // array that will contains the count of each letter in the alphabet found in the input.                         
   for(int p=0; p<26; p++){  // we fill this array with lower case alphabet letters.
     arr_alpha[p]= 'a'+ p;
   }
@@ -29,7 +29,7 @@ int main(int argc, char **argv){
       }
     }
   }
-  int max =0;
+  unsigned max =0;
   int ind=0;
   for(int j=0; j<26; j++){
     if(max < count[j]){
