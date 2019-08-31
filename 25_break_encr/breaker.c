@@ -13,11 +13,11 @@ int main(int argc, char **argv){
     fprintf(stderr, "the file in not open\n");
     return EXIT_FAILURE;
   }
-  int c;
+  int c, i;
   while( (c=fgetc(f)) != EOF){
     if( isalpha(c)){
       c = tolower(c); // we will count base on the lower case. so we need to convert all uppercase to lowercase
-      for(int i=0; i<26; i++){
+      for(i=0; i<26; i++){
 	if( c == ('a' + i)){
 	  count[i]++;         // we count the frequency of each letter found.
 	}
@@ -26,10 +26,10 @@ int main(int argc, char **argv){
   }
   unsigned max =0;
   int ind=0;
-  for(int j=0; j<26; j++){
-    if(max < count[j]){
-      max = count[j];
-      ind = j;
+  for(i=0; i<26; i++){
+    if(max < count[i]){
+      max = count[i];
+      ind = i;
     }
   }
   key = (ind + 22)%26;
