@@ -10,8 +10,8 @@ int main(int argc, char **argv){
   for(int i=0; i<26; i++){
     count[i] = 0;
   }                          
-  for(int i=0; i<26; i++){  // we fill this array with lower case alphabet letters.
-    arr_alpha[i]= 'a'+i;
+  for(int p=0; p<26; p++){  // we fill this array with lower case alphabet letters.
+    arr_alpha[p]= 'a'+ p;
   }
   if(argc != 2){ fprintf(stderr,"The program only takes 3 arguments\n");
     return EXIT_FAILURE;
@@ -34,10 +34,10 @@ int main(int argc, char **argv){
   }
   int max =0;
   int ind=0;
-  for(int i=0; i<26; i++){
-    if(max < count[i]){
-      max = count[i];
-      ind = i;
+  for(int j=0; j<26; j++){
+    if(max < count[j]){
+      max = count[j];
+      ind = j;
     }
   }
   key = (ind + 22)%26;
