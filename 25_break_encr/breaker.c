@@ -47,6 +47,10 @@ int main(int argc, char **argv){
   assert(max !=0);
   key = arr_alpha[ind] - 'e';
   fprintf(stdout,"%d\n", key);
+  if(fclose(f)!=0){
+    printf("failed to close the file\n");
+    return EXIT_FAILURE;
+  }
   return EXIT_SUCCESS;
 }
   
