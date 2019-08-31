@@ -3,12 +3,8 @@
 #include <ctype.h>
 
 int main(int argc, char **argv){
-  char arr_alpha[26];
   int key;
   unsigned count[26]={0};  // array that will contains the count of each letter in the alphabet found in the input.                         
-  for(int p=0; p<26; p++){  // we fill this array with lower case alphabet letters.
-    arr_alpha[p]= 'a'+ p;
-  }
   if(argc != 2){ fprintf(stderr,"The program only takes 3 arguments\n");
     return EXIT_FAILURE;
   }
@@ -22,7 +18,7 @@ int main(int argc, char **argv){
     if( isalpha(c)){
       c = tolower(c); // we will count base on the lower case. so we need to convert all uppercase to lowercase
       for(int i=0; i<26; i++){
-	if( c == arr_alpha[i]){
+	if( c == ('a' + i)){
 	  count[i]++;         // we count the frequency of each letter found.
 	}
       }
