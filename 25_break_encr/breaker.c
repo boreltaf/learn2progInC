@@ -19,7 +19,7 @@ int main(int argc, char **argv){
   if(argc != 2){ fprintf(stderr,"The program only takes 3 arguments\n");
     return EXIT_FAILURE;
   }
-  FILE * f= fopen(argv[0], "r");
+  FILE * f= fopen(argv[1], "r");
   if( f==NULL){
     fprintf(stderr, "the file in not open\n");
     return EXIT_FAILURE;
@@ -44,7 +44,7 @@ int main(int argc, char **argv){
     }
   }
   int q;
-  q = ind+ 22;
+  q = ind + 22;
   key = q%26;
   assert(max !=0);
   fprintf(stdout,"%d\n", key);
