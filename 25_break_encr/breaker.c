@@ -6,10 +6,7 @@
 int main(int argc, char **argv){
   char arr_alpha[26];
   int key;
-  int count[26];  // array that will contains the count of each letter in the alphabet found in the input.
-  for(int i=0; i<26; i++){
-    count[i] = 0;
-  }                          
+  int count[26]={0};  // array that will contains the count of each letter in the alphabet found in the input.                         
   for(int p=0; p<26; p++){  // we fill this array with lower case alphabet letters.
     arr_alpha[p]= 'a'+ p;
   }
