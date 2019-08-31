@@ -38,14 +38,15 @@ int main(int argc, char **argv){
   int max =0;
   int ind=0;
   for(int i=0; i<26; i++){
-    if(max <= count[i]){
+    if(max < count[i]){
       max = count[i];
       ind = i;
     }
   }
-  
+  int q;
+  q = ind+ 22;
+  key = q%26;
   assert(max !=0);
-  key = 'e' -  arr_alpha[ind];
   fprintf(stdout,"%d\n", key);
   if(fclose(f)!=0){
     printf("failed to close the file\n");
