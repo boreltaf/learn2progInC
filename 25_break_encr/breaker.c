@@ -6,11 +6,14 @@
 int main(int argc, char **argv){
   char arr_alpha[26];
   int key;
-  int count[26] = {0}; // array that will contains the count of each letter in the alphabet found in the input. 
+  int count[26];  // array that will contains the count of each letter in the alphabet found in the input.
+  for(int i=0; i<26; i++){
+    count[i] = 0;
+  }                          
   for(int i=0; i<26; i++){  // we fill this array with lower case alphabet letters.
     arr_alpha[i]= 'a'+i;
   }
-  if(argc != 1){ fprintf(stderr,"The program only takes one argument\n");
+  if(argc != 3){ fprintf(stderr,"The program only takes 3 arguments\n");
     return EXIT_FAILURE;
   }
   FILE * f= fopen(argv[0], "r");
@@ -30,14 +33,17 @@ int main(int argc, char **argv){
     }
   }
   int max =0;
+  int ind=0;
   for(int i=0; i<26; i++){
-    if(max< count[i]){
+    if(max <= count[i]){
       max = count[i];
+      ind = i;
     }
   }
-  assert((max !=0)&&(max < 26));
-  key = arr_alpha[max] - 'e';
-  printf("%d\n", key);
+  
+  assert(max !=0);
+  key = arr_alpha[ind] - 'e';
+  fprintf(stdout,"%d\n", key);
   return EXIT_SUCCESS;
 }
   
