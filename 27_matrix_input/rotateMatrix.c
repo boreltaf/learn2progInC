@@ -22,23 +22,23 @@ void rotate( char matrix[10][10]){
 }
 
 int main(int argc, char** argv){
-  if( argc ==0){ printf("ERROR\n");
+  if( argc !=2){ fprintf(stderr, "ERROR! wrong number of argument\n");
     return EXIT_FAILURE;
   }
   FILE * f=fopen(argv[1], "r");
-  if(f==NULL){ printf("the file couldn't open\n");
+  if(f==NULL){ fprintf(stderr, "the file couldn't open\n");
     return EXIT_FAILURE;
   }
   char matrix[10][10];
-  char c_line[11];
+  char c_line[12];
   int line_count =0;
-  while( (fgets(c_line, 11, f))==NULL){
+  while( (fgets(c_line, 12, f))!=NULL){
     if(strchr(c_line, '\n')==NULL){
-      printf("This line is too long\n");
+      fprintf(stderr, "This line is too long\n");
       return EXIT_FAILURE;
     }
-    if(strlen(c_line)!=10){
-      printf("THIS LINE IS TOO SHORT\n");
+    if(strlen(c_line)!=11){
+      fprintf(stderr,"THIS LINE IS TOO SHORT\n");
       return EXIT_FAILURE;
     }
     for(int i=0; i<10; i++){
@@ -47,6 +47,7 @@ int main(int argc, char** argv){
     line_count++;
   }
   if(line_count != 10){
+    fprintf(stderr, "ERROR! we have %d  line(s)\n", line_count);
     return EXIT_FAILURE;
   }
   rotate(matrix);
@@ -54,7 +55,10 @@ int main(int argc, char** argv){
     for(int j=0; j<10; j++){
       fprintf(stdout,"%c", matrix[i][j]);
     }
-    printf("\n");
+    fprintf(stdout, "\n");
+  }
+  if(fclose(f)!=0){
+    fprintf(stderr, " The file is not closed\n");
   }
   return EXIT_SUCCESS;
 }
