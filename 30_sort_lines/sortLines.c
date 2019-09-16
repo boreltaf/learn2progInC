@@ -75,12 +75,12 @@ int main(int argc, char ** argv) {
       Array_string= realloc(Array_string, (i+1)*sizeof(*Array_string));
       Array_string[i] = line;
       i++;
-      if(*line=='\n'){
+      /* if(*line=='\n'){
         goto label;
-      }
+	}*/
       line = NULL;
     }
-  label : line = NULL;
+    // label : line = NULL;
     free(line);
     if(Array_string[0]==NULL){
       fprintf(stderr, " your did not type anything\n");
