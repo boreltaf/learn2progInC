@@ -70,8 +70,7 @@ int main(int argc, char ** argv) {
     char *line=NULL;
     size_t size=0;
     int i=0;
-    ssize_t len=0;
-    while((len=getline(&line, &size, stdin))>=0){
+    while(getline(&line, &size, stdin)>=0){
       Array_string= realloc(Array_string, (i+1)*sizeof(*Array_string));
       Array_string[i] = line;
       i++;
