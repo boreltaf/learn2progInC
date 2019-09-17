@@ -50,7 +50,7 @@ int final_part(char ** Array_string, size_t lenght, int argc, FILE *f){
   else{
     if(lenght > 0){
       print_arrayOfString(Array_string, lenght);
-      for(int i=0; i< lenght; i++){
+      for(int i=0; i<lenght; i++){
 	free(Array_string[i]);
       }
       free(Array_string);
@@ -65,7 +65,7 @@ int final_part(char ** Array_string, size_t lenght, int argc, FILE *f){
 
 int main(int argc, char ** argv) {
   if(argc == 1){
-    fprintf(stdout, "Please enter the lines of your text\n");
+    // fprintf(stdout, "Please enter the lines of your text\n");
     char **Array_string= NULL;
     char *line=NULL;
     size_t size=0;
