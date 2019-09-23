@@ -34,6 +34,7 @@ kvpair_t *splitpair(char *line, size_t size){
     }
   pair->key = realloc(pair->key, (i+1)*sizeof(*(pair->key)));
   pair->key[i]='\0';
+  i++;
   int j=i;
   for(j=i; j<size; j++){
     pair->value = realloc(pair->value, (j-i+1)*sizeof(*(pair->value)));
