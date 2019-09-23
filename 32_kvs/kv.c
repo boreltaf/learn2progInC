@@ -66,7 +66,11 @@ kvarray_t * readKVs(const char * fname) {
   free(line);
   if(kvarray->arraykv == NULL){
     fprintf(stdout, "the file was empty\n");
-    exit(EXIT_FAILURE);
+    if(fclose(f)!=0){
+      fprintf(stderr, "the file couldn't close correctly\n");
+      return NULL;
+    }
+    return kvarray;
   }
   if(fclose(f)!=0){
     fprintf(stderr, "the file couldn't close correctly\n");
