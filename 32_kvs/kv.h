@@ -2,13 +2,17 @@
 #define __KV_H__
 
 
-struct _kvpair_t { 
+struct _kvpair_t {
+  char *key;
+  char *value;
   //DEFINE ME!
 
 };
 typedef struct _kvpair_t kvpair_t;
 
-struct _kvarray_t { 
+struct _kvarray_t {
+  kvpair_t **arraykv;
+  size_t kvlenght;
   //DEFINE ME!
 
 
