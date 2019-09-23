@@ -6,12 +6,12 @@
 kvpair_t *splitpair(char *line, size_t size){
   if(line==NULL){
     fprintf(stderr, "line is NULL\n");
-    return NULL;
+    exit(EXIT_FAILURE);
   }
   if(size == 0){
     fprintf(stderr, "line does not containt any character\n");
-    return NULL;
-  }
+    exit(EXIT_FAILURE);
+    }
   kvpair_t *pair =malloc(sizeof(*pair));
   pair->key = NULL;
   pair->value =NULL;
@@ -24,13 +24,13 @@ kvpair_t *splitpair(char *line, size_t size){
   if(i==0){
      free(pair);
      fprintf(stdout, "there is not key\n");
-     return NULL;
+     exit(EXIT_FAILURE);
     }
   if(i >= size-1){
     free(pair->key);
     free(pair);
     fprintf(stdout, "there is not value\n");
-    return NULL;
+    exit(EXIT_FAILURE);
     }
   pair->key = realloc(pair->key, (i+1)*sizeof(*(pair->key)));
   pair->key[i]='\0';
@@ -39,8 +39,8 @@ kvpair_t *splitpair(char *line, size_t size){
     pair->value = realloc(pair->value, (j-i+1)*sizeof(*(pair->value)));
     pair->value[j-i]=line[j];
   }
-  // pair->value = realloc(pair->value, (j-i+1)*sizeof(*(pair->value)));
-  //pair->value[j-i] = '\0';
+  pair->value = realloc(pair->value, (j-i+1)*sizeof(*(pair->value)));
+  pair->value[j-i] = '\0';
   return pair;
 }
 
@@ -57,8 +57,10 @@ kvarray_t * readKVs(const char * fname) {
     size_t size = lsize;
     kvarray->arraykv[i] = splitpair(line, size);
     i++;
-    line = NULL;
-  };
+    //line = NULL;
+    free(line);
+    line=NULL;
+  }
   kvarray->kvlenght = (i>0)? i: i;
   free(line);
   if(kvarray->arraykv == NULL){
