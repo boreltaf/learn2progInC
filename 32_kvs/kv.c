@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -95,7 +94,7 @@ void printKVs(kvarray_t * pairs) {
 char * lookupValue(kvarray_t * pairs, const char * key) {
   for(int i=0; i < pairs->kvlenght; i++){
     if(strcmp(pairs->arraykv[i]->key, key)==0){
-      return pairs->arraykv[i]->key;
+      return pairs->arraykv[i]->value;
     }
   }
   return NULL;
