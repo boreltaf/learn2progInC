@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -56,7 +57,7 @@ kvarray_t * readKVs(const char * fname) {
   while((lsize=getline(&line, &x,f))>0){
     kvarray->arraykv = realloc(kvarray->arraykv, (i+1)*sizeof(*(kvarray->arraykv)));
     size_t size = lsize;
-    kvarray->arraykv[i] = splitpair(line, size-1);
+    kvarray->arraykv[i] = splitpair(line, size);
     i++;
     //line = NULL;
     free(line);
