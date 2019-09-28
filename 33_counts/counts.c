@@ -34,7 +34,7 @@ int check(const char *c, const char *d){
 
 void createStringCp(size_t len, const char *name, counts_t *c){
   char *string=NULL;
-  string = realloc(string, (len+1)*sizeof(char));
+  string = calloc((len+1), sizeof(char));
   for(int i=0; i<len; i++){
     string[i]=name[i];
   }
@@ -59,20 +59,7 @@ void addCount(counts_t * c, const char * name) {
       return;
     }
   }
-  char *string = NULL;
-  size_t len = strlen(name);
-  string = realloc(string, (len+1)*sizeof(char));
-  for(int i=0; i<len; i++){
-    string[i]=name[i];
-  }
-  c->countArray=realloc(c->countArray, ((++c->lenght)*sizeof(*(c->countArray))));
-  c->countArray[c->lenght-1]=NULL;
-  c->countArray[c->lenght-1]=realloc(c->countArray[c->lenght-1], sizeof(*(c->countArray[c->lenght-1])));
-  c->countArray[c->lenght-1]->name=string;
-  c->countArray[c->lenght-1]->count=1;
-  string=NULL;
-  free(string);
-  //createStringCp(strlen(name), name, c);
+  createStringCp(strlen(name), name, c);
 }
 
 void printCounts(counts_t * c, FILE * outFile) {
