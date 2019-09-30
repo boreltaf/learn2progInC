@@ -21,8 +21,12 @@ counts_t * countFile(const char * filename, kvarray_t * kvPairs) {
     line[strlen(line)-1]='\0';
     char* Cvalue = lookupValue(kvPairs, line);   // lookupValue will check if there is a key equivlent to line and return the value of \that key if there is. if not, it will return a null pointer.
     addCount(c, Cvalue);
+    Cvalue=NULL;
   }
   free(line);
+  if(fclose(f)!=0){
+    fprintf(stderr, "the file couldn't close\n");
+  }
   return c;
 }
 
@@ -51,7 +55,7 @@ int main(int argc, char ** argv) {
     //close f
     if(fclose(f)!=0){
       fprintf(stderr, "ERROR when closing the file\n");
-      return EXIT_FAILURE;;
+      return EXIT_FAILURE;
     }
     //free the memory for outName and c
     free(outName);
