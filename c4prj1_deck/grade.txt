@@ -1,4 +1,4 @@
-Grading at Tue Oct  1 19:40:34 UTC 2019
+Grading at Tue Oct  1 19:45:52 UTC 2019
 Compiling deck.c -> deck.o
 Compiling eval.c -> eval.o
 Compiling cards.c -> cards.o
@@ -20,93 +20,54 @@ Testing with 5 hands
 Testing with 6 hands
 - Test passed
 Testing get_match_count(deck_t *)
-In this hand: Ac 
-  I expected the 0'th match count to be 1 but you got 0
 timeout: the monitored command dumped core
 Valgrind reported errors:
-==775== Memcheck, a memory error detector
-==775== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==775== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==775== Command: ./tester gmc
-==775== Parent PID: 774
-==775== 
-==775== Conditional jump or move depends on uninitialised value(s)
-==775==    at 0x4038BB: check_get_match_count (in /graderhome/work/c4prj1_deck/tester)
-==775==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
-==775== 
-==775== Use of uninitialised value of size 8
-==775==    at 0x4E8476B: _itoa_word (_itoa.c:179)
-==775==    by 0x4E8812C: vfprintf (vfprintf.c:1631)
-==775==    by 0x4F509EE: __printf_chk (printf_chk.c:35)
-==775==    by 0x403899: check_get_match_count (in /graderhome/work/c4prj1_deck/tester)
-==775==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
-==775== 
-==775== Conditional jump or move depends on uninitialised value(s)
-==775==    at 0x4E84775: _itoa_word (_itoa.c:179)
-==775==    by 0x4E8812C: vfprintf (vfprintf.c:1631)
-==775==    by 0x4F509EE: __printf_chk (printf_chk.c:35)
-==775==    by 0x403899: check_get_match_count (in /graderhome/work/c4prj1_deck/tester)
-==775==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
-==775== 
-==775== Conditional jump or move depends on uninitialised value(s)
-==775==    at 0x4E881AF: vfprintf (vfprintf.c:1631)
-==775==    by 0x4F509EE: __printf_chk (printf_chk.c:35)
-==775==    by 0x403899: check_get_match_count (in /graderhome/work/c4prj1_deck/tester)
-==775==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
-==775== 
-==775== Conditional jump or move depends on uninitialised value(s)
-==775==    at 0x4E87C59: vfprintf (vfprintf.c:1631)
-==775==    by 0x4F509EE: __printf_chk (printf_chk.c:35)
-==775==    by 0x403899: check_get_match_count (in /graderhome/work/c4prj1_deck/tester)
-==775==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
-==775== 
-==775== Conditional jump or move depends on uninitialised value(s)
-==775==    at 0x4E87CE2: vfprintf (vfprintf.c:1631)
-==775==    by 0x4F509EE: __printf_chk (printf_chk.c:35)
-==775==    by 0x403899: check_get_match_count (in /graderhome/work/c4prj1_deck/tester)
-==775==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
-==775== 
-==775== Invalid read of size 8
-==775==    at 0x401AC4: get_match_counts (in /graderhome/work/c4prj1_deck/tester)
-==775==    by 0x403869: check_get_match_count (in /graderhome/work/c4prj1_deck/tester)
-==775==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
-==775==  Address 0x5205310 is 0 bytes after a block of size 16 alloc'd
-==775==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==775==    by 0x403716: check_get_match_count (in /graderhome/work/c4prj1_deck/tester)
-==775==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
-==775== 
-==775== Invalid read of size 4
-==775==    at 0x401AC7: get_match_counts (in /graderhome/work/c4prj1_deck/tester)
-==775==    by 0x403869: check_get_match_count (in /graderhome/work/c4prj1_deck/tester)
-==775==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
-==775==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==775== 
-==775== 
-==775== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==775==  Access not within mapped region at address 0x0
-==775==    at 0x401AC7: get_match_counts (in /graderhome/work/c4prj1_deck/tester)
-==775==    by 0x403869: check_get_match_count (in /graderhome/work/c4prj1_deck/tester)
-==775==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
-==775==  If you believe this happened as a result of a stack
-==775==  overflow in your program's main thread (unlikely but
-==775==  possible), you can try to increase the size of the
-==775==  main thread stack using the --main-stacksize= flag.
-==775==  The main thread stack size used in this run was 8388608.
-==775== 
-==775== HEAP SUMMARY:
-==775==     in use at exit: 112 bytes in 10 blocks
-==775==   total heap usage: 15 allocs, 5 frees, 4,232 bytes allocated
-==775== 
-==775== LEAK SUMMARY:
-==775==    definitely lost: 8 bytes in 1 blocks
-==775==    indirectly lost: 0 bytes in 0 blocks
-==775==      possibly lost: 0 bytes in 0 blocks
-==775==    still reachable: 104 bytes in 9 blocks
-==775==         suppressed: 0 bytes in 0 blocks
-==775== Rerun with --leak-check=full to see details of leaked memory
-==775== 
-==775== For counts of detected and suppressed errors, rerun with: -v
-==775== Use --track-origins=yes to see where uninitialised values come from
-==775== ERROR SUMMARY: 8 errors from 8 contexts (suppressed: 0 from 0)
+==919== Memcheck, a memory error detector
+==919== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==919== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==919== Command: ./tester gmc
+==919== Parent PID: 918
+==919== 
+==919== Invalid read of size 8
+==919==    at 0x401AFE: get_match_counts (in /graderhome/work/c4prj1_deck/tester)
+==919==    by 0x4038A9: check_get_match_count (in /graderhome/work/c4prj1_deck/tester)
+==919==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==919==  Address 0x52042d0 is 0 bytes after a block of size 16 alloc'd
+==919==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==919==    by 0x403756: check_get_match_count (in /graderhome/work/c4prj1_deck/tester)
+==919==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==919== 
+==919== Invalid read of size 4
+==919==    at 0x401B01: get_match_counts (in /graderhome/work/c4prj1_deck/tester)
+==919==    by 0x4038A9: check_get_match_count (in /graderhome/work/c4prj1_deck/tester)
+==919==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==919==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==919== 
+==919== 
+==919== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==919==  Access not within mapped region at address 0x0
+==919==    at 0x401B01: get_match_counts (in /graderhome/work/c4prj1_deck/tester)
+==919==    by 0x4038A9: check_get_match_count (in /graderhome/work/c4prj1_deck/tester)
+==919==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==919==  If you believe this happened as a result of a stack
+==919==  overflow in your program's main thread (unlikely but
+==919==  possible), you can try to increase the size of the
+==919==  main thread stack using the --main-stacksize= flag.
+==919==  The main thread stack size used in this run was 8388608.
+==919== 
+==919== HEAP SUMMARY:
+==919==     in use at exit: 112 bytes in 10 blocks
+==919==   total heap usage: 14 allocs, 4 frees, 136 bytes allocated
+==919== 
+==919== LEAK SUMMARY:
+==919==    definitely lost: 8 bytes in 1 blocks
+==919==    indirectly lost: 0 bytes in 0 blocks
+==919==      possibly lost: 0 bytes in 0 blocks
+==919==    still reachable: 104 bytes in 9 blocks
+==919==         suppressed: 0 bytes in 0 blocks
+==919== Rerun with --leak-check=full to see details of leaked memory
+==919== 
+==919== For counts of detected and suppressed errors, rerun with: -v
+==919== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
 
 Overall Grade: B
