@@ -1,0 +1,9 @@
+Grading at Tue Oct  1 02:56:25 UTC 2019
+Compiling deck.c -> deck.o
+deck.c: In function ‘make_deck_exclude’:
+deck.c:124:7: error: expected ‘,’ or ‘;’ before ‘deck’
+       deck->cards[i]->value = c.value;
+       ^
+Compilation of deck.c failed
+
+Overall Grade: F
