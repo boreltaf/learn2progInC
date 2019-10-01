@@ -305,7 +305,7 @@ unsigned * get_match_counts(deck_t * hand){
   size_t index=0;
   while(index<hand->n_cards - 1){
     int i=index;
-    printf("index: %u,  match[index]: %u, \n", index, match[index]);
+    printf("index: %zu,  match[index]: %zu, \n", index, match[index]);
     while(hand->cards[i]->value == hand->cards[i+1]->value){
       count++;
       i++;
