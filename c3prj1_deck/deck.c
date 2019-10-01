@@ -4,7 +4,9 @@
 #include <time.h> 
 #include "deck.h"
 void free_deck(deck_t * deck) ;
+
 #define max 54
+
 void print_hand(deck_t * hand){
   size_t i=0;
   card_t c={2, NUM_SUITS};
@@ -59,6 +61,13 @@ void assert_full_deck(deck_t * d) {
   }
 }
 void add_card_to(deck_t * deck, card_t c){
+  if(deck ==NULL){
+    deck = malloc(sizeof(*deck));
+    deck->n_cards = 0;
+  }
+  if(deck->n_cards==0){
+    deck->cards = NULL;
+  }
   deck->cards = realloc(deck, (++(deck->n_cards))*sizeof(*deck->cards));
   deck->cards[deck->n_cards - 1]=calloc(1, sizeof(*(deck->cards[deck->n_cards - 1])));
   deck->cards[deck->n_cards - 1]->value = c.value;
