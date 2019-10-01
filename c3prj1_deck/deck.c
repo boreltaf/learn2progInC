@@ -127,8 +127,8 @@ deck_t * make_deck_exclude(deck_t * excluded_cards){
       }
     }
     
-    if(ck==0){
-      deck->cards = realloc(deck->cards, (++deck->n_cards)*sizeof(*(deck->cards)));
+    if(ck == 0){
+      deck->cards = realloc(deck->cards, (++(deck->n_cards))*sizeof(*(deck->cards)));
       deck->cards[i] = NULL;
       deck->cards[i] = realloc(deck->cards[i], sizeof(*(deck->cards[i])));
       card_t c = card_from_num(i);
