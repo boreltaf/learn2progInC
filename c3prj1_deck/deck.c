@@ -120,7 +120,7 @@ deck_t * make_deck_exclude(deck_t * excluded_cards){
       deck->cards = realloc(deck->cards, (++deck->n_cards)*sizeof(*(deck->cards)));
       deck->cards[i] = NULL;
       deck->cards[i] = realloc(deck->cards[i], sizeof(*(deck->cards[i])));
-      card_t c = card_from_num(i)
+      card_t c = card_from_num(i);
       deck->cards[i]->value = c.value;
       deck->cards[i]->suit = c.suit;
     }
