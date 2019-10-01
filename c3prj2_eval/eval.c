@@ -300,13 +300,16 @@ unsigned * get_match_counts(deck_t * hand){
   unsigned *match = malloc((hand->n_cards)*sizeof(*match));
   int count=1;
   size_t index=0;
-  while(index<hand->n_cards){
+  while(index<hand->n_cards - 1){
     int i=index;
     while(hand->cards[i]->value == hand->cards[i+1]->value){
       count++;
       i++;
+      if(i>=hand->n_cards){
+	goto label;
+      }
     }
-    for(int k=index; k<count; k++){
+    label:  for(int k=index; k<count; k++){
       match[k]=count;
     }
     index +=count;
