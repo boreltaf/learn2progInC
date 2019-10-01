@@ -83,27 +83,6 @@ card_t * add_empty_card(deck_t * deck){
   return c;
 }
 
-
-int num_from_card(card_t c){
-  int num;
-  if(c.suit == SPADES){
-    num = c.value -2;
-  }
-  else if(c.suit == HEARTS){
-    num = 13 + c.value - 2;
-  }
-  else if(c.suit == CLUBS){
-    num = 2*13 + c.value -2;
-  }
-  else if(c.suit == DIAMONDS){
-    num = 3*13 + c.value -2;
-  }
-  else{
-    perror("card contain wrong values\n");
-    return EXIT_FAILURE;
-  }
-  return num;
-}
     
 //  Create a deck that is full EXCEPT for all the cards
 //  that appear in excluded_cards
@@ -118,10 +97,10 @@ deck_t * make_deck_exclude(deck_t * excluded_cards){
     card_t c = card_from_num(i);
     if(deck_contains(excluded_cards, c)==0){
       deck->cards = realloc(deck->cards, (deck->n_cards + 1)*sizeof(*(deck->cards)));
-      deck->cards[deck->n_cards - 1] = NULL;
-      deck->cards[deck->n_cards - 1] = realloc(deck->cards[deck->n_cards - 1], sizeof(*(deck->cards[0])));
-      deck->cards[deck->n_cards - 1]->value = c.value;
-      deck->cards[deck->n_cards - 1]->suit = c.suit;
+      deck->cards[deck->n_cards] = NULL;
+      deck->cards[deck->n_cards] = realloc(deck->cards[deck->n_cards], sizeof(*(deck->cards[0])));
+      deck->cards[deck->n_cards]->value = c.value;
+      deck->cards[deck->n_cards]->suit = c.suit;
       deck->n_cards++;
     }
   }
