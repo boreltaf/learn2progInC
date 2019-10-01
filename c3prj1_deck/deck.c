@@ -108,35 +108,22 @@ int num_from_card(card_t c){
 //  Create a deck that is full EXCEPT for all the cards
 //  that appear in excluded_cards
 deck_t * make_deck_exclude(deck_t * excluded_cards){
-  int exclu_num[max]={0};
-  for(int i=0; i<excluded_cards->n_cards; i++){
-    //  exclu_num[i] = num_from_card(*((excluded_cards->cards)[i]));
-  }
-  
   deck_t *deck = calloc(1, sizeof(*(deck)));
   deck->n_cards=0;
   deck->cards = NULL;
   if(excluded_cards->n_cards>=52){
     return deck;
   }
-  int ck=0;
   for(int i=0; i<52; i++){
-    for(int j=0; j<excluded_cards->n_cards; j++){
-      if(i == exclu_num[j]){
-	ck++;
-      }
-    }
-    
-    if(ck == 0){
+    card_t c = card_from_num(i);
+    if(deck_contains(excluded_cards, c)==0){
       deck->cards = realloc(deck->cards, (deck->n_cards+1)*sizeof(*(deck->cards)));
       deck->cards[i] = NULL;
       deck->cards[i] = realloc(deck->cards[i], sizeof(*(deck->cards[i])));
-      card_t c = card_from_num(i);
       deck->cards[i]->value = c.value;
       deck->cards[i]->suit = c.suit;
       deck->n_cards++;
     }
-    ck =0;
   }
   return deck;
 }
