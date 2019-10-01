@@ -110,7 +110,7 @@ int num_from_card(card_t c){
 deck_t * make_deck_exclude(deck_t * excluded_cards){
   int exclu_num[max]={0};
   for(int i=0; i<excluded_cards->n_cards; i++){
-    exclu_num[i] = num_from_card(*((excluded_cards->cards)[i]));
+    //  exclu_num[i] = num_from_card(*((excluded_cards->cards)[i]));
   }
   
   deck_t *deck = calloc(1, sizeof(*(deck)));
