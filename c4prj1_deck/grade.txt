@@ -1,9 +1,9 @@
-Grading at Tue Oct  1 20:24:42 UTC 2019
+Grading at Tue Oct  1 20:27:01 UTC 2019
 Compiling deck.c -> deck.o
 Compiling eval.c -> eval.o
 eval.c: In function ‘get_match_counts’:
-eval.c:308:12: error: format ‘%u’ expects argument of type ‘unsigned int’, but argument 2 has type ‘size_t {aka long unsigned int}’ [-Werror=format=]
-     printf("index: %u,  match[index]: %u, \n", index, match[index]);
+eval.c:308:12: error: format ‘%zu’ expects argument of type ‘size_t’, but argument 3 has type ‘unsigned int’ [-Werror=format=]
+     printf("index: %zu,  match[index]: %zu, \n", index, match[index]);
             ^
 cc1: all warnings being treated as errors
 Compilation of eval.c failed
