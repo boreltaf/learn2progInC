@@ -297,7 +297,7 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
 //   because there are 2 kings, 2 queens,
 //  1 ten, and 3 nines.
 unsigned * get_match_counts(deck_t * hand){
-  unsigned *match =(int *) malloc((hand->n_cards)*sizeof(*match));
+  unsigned *match = malloc((hand->n_cards)*sizeof(*match));
   for(int i=0; i<hand->n_cards; i++){
     match[i]=1;
   }
@@ -312,8 +312,8 @@ unsigned * get_match_counts(deck_t * hand){
 	goto label;
       }
     }
-    label: for(int k=index; k<count; k++){
-      match[k]=count;
+  label: for(int k=index; k<(index + count); k++){
+      match[k] = count;
     }
     index +=count;
     count = 1;
