@@ -76,8 +76,9 @@ void add_card_to(deck_t * deck, card_t c){
 }
 card_t * add_empty_card(deck_t * deck){
   card_t *c=calloc(1, sizeof(*c));
-  c->value = c->suit = 0;
-  deck->cards = realloc(deck, (++(deck->n_cards))*sizeof(*deck->cards));
+  c->value = 0;
+  c->suit = 0;
+  deck->cards = realloc(deck->cards, (++(deck->n_cards))*sizeof(*deck->cards));
   deck->cards[deck->n_cards - 1]= c;
   return c;
 }
