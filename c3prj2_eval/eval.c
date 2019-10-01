@@ -311,7 +311,7 @@ unsigned * get_match_counts(deck_t * hand){
       printf("index: %d,  match[index]: %u\n", i, match[index]);
       count++;
       i++;
-      if(i>=hand->n_cards){
+      if(i + 1>=hand->n_cards){
 	goto label;
       }
     }
