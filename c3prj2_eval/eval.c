@@ -86,32 +86,6 @@ int  straight_starting_at( deck_t *hand, size_t index){
     int k = index;
     int count=1;
     if(index >= hand->n_cards - 4){ return 0;}
-    //  if((k+1)>= hand->n_cards){ break;}
-    /* for(j=i; j< hand->n_cards; j++){
-       unsigned val2 = hand->cards[j]->value;
-       if(val2 == (val1 - 1)){
-	 count++;
-	 int a;
-	 for(a=j; a < hand->n_cards; a++){
-	   if(hand->cards[a]->value == hand->cards[j]->value-1){
-	     count++;
-	     int b;
-	     for(b=a; b < hand->n_cards; b++){
-	       if(hand->cards[b]->value == hand->cards[a]->value-1){
-	       count++;
-	       int d;
-	       for(d=b; d < hand->n_cards; d++){
-		 if(hand->cards[d]->value == hand->cards[b]->value-1){
-		   count++;
-		 }
-	       }
-	       }
-	     }
-	   }
-	 }
-       }
-     }
-     if(count >= 5){ return 1;}*/
       while((((*(*hand).cards[k+1]).value) == (((*(*hand).cards[k]).value) - 1))||(((*(*hand).cards[k+1]).value) == ((*(*hand).cards[k]).value))){
       if((*(*hand).cards[k+1]).value == (*(*hand).cards[k]).value - 1){
 	count++;
@@ -223,28 +197,6 @@ int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
       }
     }
     }
-    
-    /* else if( count == 4){
-      if( (hand->cards[index]->value) == 5){
-	size_t f=index;
-	int count2 = 1;
-	while((((hand->cards[f+1]->value) == ((hand->cards[f]->value) - 1))||(hand->cards[f]->value == hand->cards[f+1]->value))){
-	  if(((hand->cards[f+1]->value) == (hand->cards[f]->value - 1))&&(hand->cards[f+1]->suit == fs)){
-	    count2++;
-	  }
-	  f++;
-	  if( f+1 >= hand->n_cards){ break ;}
-	}
-	if(count2 >= 4){
-	  if((hand->cards[0]->value) == 14){
-	    return -1;
-	  }
-	  return 0;
-	}
-      }
-      return 0;
-    }
-    }*/
   }
   return 0;
 }
@@ -332,15 +284,35 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
 
 
 
-//You will write this function in Course 4.
-//For now, we leave a prototype (and provide our
-//implementation in eval-c4.o) so that the
-//other functions we have provided can make
-//use of get_match_counts.
-unsigned * get_match_counts(deck_t * hand) ;
-
-// We provide the below functions.  You do NOT need to modify them
-// In fact, you should not modify them!
+//this function
+//   allocates an array of unsigned ints with as
+//      many elements as there are cards in the hand.
+//      It then fills in this array with
+//      the "match counts" of the corresponding cards.
+//For example,
+//   given
+//        Ks Kh Qs Qh 0s 9d 9c 9h
+//      This function would return
+//        2  2  2  2  1  3  3  3
+//   because there are 2 kings, 2 queens,
+//  1 ten, and 3 nines.
+unsigned * get_match_counts(deck_t * hand){
+  unsigned *match = malloc((hand->n_cards)*sizeof(*match));
+  int count=1;
+  size_t index=0;
+  while(index<hand->n_cards){
+    int i=index;
+    while(hand->cards[i]->value == hand->cards[i+1]->value){
+      count++;
+      i++;
+    }
+    for(int k=index; k<count; k++){
+      match[k]=count;
+    }
+    index +=count;
+  }
+  return match;
+}
 
 
 //This function copies a straight starting at index "ind" from deck "from".

@@ -3,6 +3,8 @@
 #include <assert.h>
 #include <time.h> 
 #include "deck.h"
+void free_deck(deck_t * deck) ;
+#define max 54
 void print_hand(deck_t * hand){
   size_t i=0;
   card_t c={2, NUM_SUITS};
@@ -55,4 +57,97 @@ void assert_full_deck(deck_t * d) {
       }
     }
   }
+}
+void add_card_to(deck_t * deck, card_t c){
+  deck->cards = realloc(deck, (++(deck->n_cards))*sizeof(*deck->cards));
+  deck->cards[deck->n_cards - 1]=calloc(1, sizeof(*(deck->cards[deck->n_cards - 1])));
+  deck->cards[deck->n_cards - 1]->value = c.value;
+  deck->cards[deck->n_cards - 1]->suit = c.suit;
+}
+card_t * add_empty_card(deck_t * deck){
+  card_t *c=calloc(1, sizeof(*c));
+  c->value = c->suit = 0;
+  deck->cards = realloc(deck, (++(deck->n_cards))*sizeof(*deck->cards));
+  deck->cards[deck->n_cards - 1]= c;
+  return c;
+}
+
+
+int num_from_card(card_t c){
+  int num;
+  if(c.suit == SPADES){
+    num = c.value -2;
+  }
+  else if(c.suit == HEARTS){
+    num = 13 + c.value - 2;
+  }
+  else if(c.suit == CLUBS){
+    num = 2*13 + c.value -2;
+  }
+  else if(c.suit == DIAMONDS){
+    num = 3*13 + c.value -2;
+  }
+  else{
+    perror("card contain wrong values\n");
+    return EXIT_FAILURE;
+  }
+  return num;
+}
+    
+//  Create a deck that is full EXCEPT for all the cards
+//  that appear in excluded_cards
+deck_t * make_deck_exclude(deck_t * excluded_cards){
+  int exclu_num[max]={0};
+  for(int i=0; i<excluded_cards->n_cards; i++){
+    exclu_num[i] = num_from_card(*(excluded_cards->cards[i]));
+  }
+  
+  deck_t *deck = calloc(1, sizeof(*(deck)));
+  deck->n_cards=0;
+  deck->cards = NULL;
+  if(excluded_cards->n_cards>=52){
+    return deck;
+  }
+  int ck=0;
+  for(int i=0; i<52; i++){
+    for(int j=0; j<excluded_cards->n_cards; j++){
+      if(i == exclu_num[j]){
+	ck++;
+      }
+    }
+    
+    if(ck==0){
+      deck->cards = realloc(deck->cards, (++deck->n_cards)*sizeof(*(deck->cards)));
+      deck->cards[i] = NULL;
+      deck->cards[i] = realloc(deck->cards[i], sizeof(*(deck->cards[i])));
+      card_t c = card_from_num(i)
+      deck->cards[i]->value = c.value;
+      deck->cards[i]->suit = c.suit;
+    }
+    ck =0;
+  }
+  return deck;
+}
+
+// this function builds the deck of cards that remain after the cards from the array of hands
+// it takes as parameters have been removed from a full deck
+deck_t * build_remaining_deck(deck_t ** hands, size_t n_hands){
+  deck_t *tober=malloc(sizeof(*tober));
+  tober->n_cards=0;
+  tober->cards = NULL;
+  for(int i=0; i<n_hands; i++){
+    for(int j=0; j<hands[i]->n_cards; j++){
+      add_card_to(tober, *(hands[i]->cards[j]));
+    }
+  }
+  deck_t *remaining = make_deck_exclude(tober);
+  free_deck(tober);
+  return remaining;
+}
+void free_deck(deck_t * deck){
+  for(int i=0; i<deck->n_cards; i++){
+    free(deck->cards[i]);
+  }
+  free(deck->cards);
+  free(deck);
 }
