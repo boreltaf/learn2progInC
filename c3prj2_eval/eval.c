@@ -314,7 +314,7 @@ unsigned * get_match_counts(deck_t * hand){
     }
   label: for(int k=index; k<(index + count); k++){
       match[k] = count;
-      print("count: %d,  match[i]: %u\n", count, match[i]);
+      printf("count: %d,  match[i]: %u\n", count, match[i]);
     }
     index +=count;
     count = 1;
