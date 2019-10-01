@@ -5,7 +5,7 @@
 #include "deck.h"
 void free_deck(deck_t * deck) ;
 
-#define max 54
+#define max 1000
 
 void print_hand(deck_t * hand){
   size_t i=0;
@@ -110,7 +110,7 @@ int num_from_card(card_t c){
 deck_t * make_deck_exclude(deck_t * excluded_cards){
   int exclu_num[max]={0};
   for(int i=0; i<excluded_cards->n_cards; i++){
-    exclu_num[i] = num_from_card(*(excluded_cards->cards[i]));
+    exclu_num[i] = num_from_card(*((excluded_cards->cards)[i]));
   }
   
   deck_t *deck = calloc(1, sizeof(*(deck)));
@@ -128,12 +128,13 @@ deck_t * make_deck_exclude(deck_t * excluded_cards){
     }
     
     if(ck == 0){
-      deck->cards = realloc(deck->cards, (++(deck->n_cards))*sizeof(*(deck->cards)));
+      deck->cards = realloc(deck->cards, (deck->n_cards+1)*sizeof(*(deck->cards)));
       deck->cards[i] = NULL;
       deck->cards[i] = realloc(deck->cards[i], sizeof(*(deck->cards[i])));
       card_t c = card_from_num(i);
       deck->cards[i]->value = c.value;
       deck->cards[i]->suit = c.suit;
+      deck->n_cards++;
     }
     ck =0;
   }
