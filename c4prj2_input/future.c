@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "future.h"
 
 void add_future_card(future_cards_t * fc, size_t index, card_t * ptr){
@@ -26,7 +27,7 @@ void future_cards_from_deck(deck_t * deck, future_cards_t * fc){
   }
   for(int i=0; i< fc->n_decks; i++){
     if(fc->decks[i].cards!= NULL){
-      size_t range = ((fc->deck[i]).n_cards > deck->n_cards)? deck->n_cards: (fc->deck[i]).n_cards;
+      size_t range = ((fc->decks[i]).n_cards > deck->n_cards)? deck->n_cards: (fc->decks[i]).n_cards;
 	for(int j=0; j< range; j++){
 	  (fc->decks[i]).cards[j] = deck->cards[i];
 	}
