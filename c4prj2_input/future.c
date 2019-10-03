@@ -30,7 +30,8 @@ void future_cards_from_deck(deck_t * deck, future_cards_t * fc){
     if(fc->decks[i].cards!= NULL){
       size_t range = ((fc->decks[i]).n_cards > deck->n_cards)? deck->n_cards: (fc->decks[i]).n_cards;
 	for(int j=0; j< range; j++){
-	  (fc->decks[i]).cards[j] = deck->cards[i];
+	  (fc->decks[i]).cards[j]->value = deck->cards[i]->value;
+	  (fc->decks[i]).cards[j]->suit = deck->cards[i]->suit
 	}
     }
   }

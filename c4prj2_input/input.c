@@ -74,6 +74,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
 deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc){
   if(f==NULL){
     perror("The file is not open\n");
+    exit(EXIT_FAILURE);
   }
   deck_t **deckArray = NULL;
   deckArray = calloc(1, sizeof(*deckArray));
