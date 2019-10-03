@@ -23,9 +23,9 @@ int checkEntry(char v, char s){
   if(s=='d'){ su++;}
   if(s=='c'){ su++;}
 
-  if((val==1)&&(su==1)){ return 10;}
+  if((val==1)&&(su==1)){ return 53;}
   else if((val==5)&&(su==0)){
-    for(int j=0; j<10; j++){
+    for(int j=0; j<52; j++){
       if(s=='0'+j){ return j;}
     }
   }
@@ -49,7 +49,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
     if(i+1>=strlen(str)){
 	goto label;
       }
-    if(checkEntry(str[i], str[i+1])==10){
+    if(checkEntry(str[i], str[i+1])==53){
        card_t c = card_from_letters(str[i], str[i+1]);
        add_card_to(deck, c);
        count++;
