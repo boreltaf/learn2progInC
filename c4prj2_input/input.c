@@ -59,10 +59,10 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
       add_future_card(fc, checkEntry(str[i], str[i+1]), card);
     }
     else{ perror(" wrong cards\n"); exit(EXIT_FAILURE);}
+    i+=2;
     if(i>=strlen(str)){
       goto label;
     }
-    i+=2;
   }
  label: if(count<5){
     perror("This line has less than 5 cards\n");
@@ -78,13 +78,11 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc){
   }
   deck_t **deckArray = NULL;
   deckArray = calloc(1, sizeof(*deckArray));
-  *n_hands = 0;
   char *line=NULL;
   size_t x=0;
   while(getline(&line, &x, f)>0){
     deckArray = realloc(deckArray, (*n_hands + 1)*sizeof(*deckArray));
-    size_t t = *(n_hands);
-    deckArray[t] = hand_from_string(line, fc);
+    deckArray[*n_hands] = hand_from_string(line, fc);
     *n_hands +=1;
   }
   free(line);

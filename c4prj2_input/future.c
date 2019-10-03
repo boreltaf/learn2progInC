@@ -8,17 +8,16 @@ void add_future_card(future_cards_t * fc, size_t index, card_t * ptr){
      }
   else{
     for(int i=fc->n_decks; i<index; i++){
-      if(i>= fc->n_decks){
-	fc->decks = realloc(fc->decks, ++(fc->n_decks)*sizeof(*(fc->decks)));
-	fc->decks[fc->n_decks - 1].n_cards =0;
-	fc->decks[fc->n_decks - 1].cards = NULL;
-      }
+	fc->decks = realloc(fc->decks, (i+1)*sizeof(*(fc->decks)));
+	fc->decks[i].n_cards =0;
+	fc->decks[i].cards = NULL;
     }
+    fc->n_decks = index;
     fc->decks = realloc(fc->decks, ++(fc->n_decks)*sizeof(*(fc->decks)));
     fc->decks[index].n_cards = 1;
     fc->decks[index].cards=calloc(1, sizeof(*(fc->decks[index].cards)));
     fc->decks[index].cards[0] = ptr;
-    }
+  }
 }
 
 void future_cards_from_deck(deck_t * deck, future_cards_t * fc){
