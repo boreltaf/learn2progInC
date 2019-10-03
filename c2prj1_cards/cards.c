@@ -70,7 +70,7 @@ char suit_letter(card_t c) {
   if(c.suit==HEARTS){ return 'h';}
   if(c.suit==DIAMONDS){ return 'd';}
   if(c.suit==CLUBS){ return 'c';}
-  else{ return '?';}
+  else{ return c.suit;}
   
 }
 
