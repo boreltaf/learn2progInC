@@ -25,9 +25,9 @@ int checkEntry(char v, char s, char r){
 
   if((val==1)&&(su==1)){ return 100;}
   else if((val==5)&&(su==0)){
-    for(int j=0; j<9; j++){
-      if((s=='0'+j)){
-	for(int d=1; d<9; d++){
+    for(int j=0; j<=9; j++){
+      if(s=='0'+j){
+	for(int d=1; d<=9; d++){
 	  if(r=='0'+d){ return 10*j + d;}
 	}
 	return j;
