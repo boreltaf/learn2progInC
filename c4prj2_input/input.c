@@ -83,7 +83,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
 	card_t *card = add_empty_card(deck);
 	add_future_card(fc, checkEntry(str[i], str[i+1], '+'), card);
       }
-      else{ perror(" wrong cards\n"); exit(EXIT_FAILURE);}
+      //else{ perror(" wrong cards\n"); exit(EXIT_FAILURE);}
     }
     if(i>=strlen(str)){
       goto label;
