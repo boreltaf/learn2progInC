@@ -77,7 +77,7 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc){
     perror("The file is not open\n");
   }
   deck_t **deckArray = NULL;
-  deckArray = realloc(deckArray, sizeof(*deckArray));
+  deckArray = calloc(1, sizeof(*deckArray));
   *n_hands = 0;
   char *line=NULL;
   size_t x=0;
