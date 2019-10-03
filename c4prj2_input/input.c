@@ -1,5 +1,5 @@
 #include "input.h"
-
+#include <string.h>
 
 
 // this function will take in two characters and check if the first is a valid value and the second a valid suit.
@@ -29,7 +29,7 @@ int checkEntry(char v, char s){
       if(s=='0'+j){ return j;}
     }
   }
-  else{ return -1;}
+  return -1;
 }
 
 
@@ -74,7 +74,8 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc){
   if(f==NULL){
     perror("The file is not open\n");
   }
-  deck_t **deckArray = realloc(deckArray, sizeof(*deckArray));
+  deck_t **deckArray = NULL;
+  deckArray = realloc(deckArray, sizeof(*deckArray));
   *n_hands = 0;
   char *line=NULL;
   size_t x=0;
