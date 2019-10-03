@@ -89,7 +89,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
     if(i>=strlen(str)){
       goto label;
     }
-    //if((str[i]!=' ')&&(str[i]!='\n')&&(str[i]!='\0')){ printf("the this line is invalid\n"); exit(EXIT_FAILURE);}
+    if((str[i]!=' ')&&(str[i]!='\n')&&(str[i]!='\0')){ printf("the this line is invalid\n"); exit(EXIT_FAILURE);}
   }
  label: if(count<5){
     perror("This line has less than 5 cards\n");
