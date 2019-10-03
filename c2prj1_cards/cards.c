@@ -59,7 +59,7 @@ char value_letter(card_t c) {
   if(value==13){ return 'K';}
   if(value==14){ return 'A';}
   else {
-    printf("wrong value. the value should be between 2 and 14\n");
+    // printf("wrong value. the value should be between 2 and 14\n");
   }
   return '?';
 }
