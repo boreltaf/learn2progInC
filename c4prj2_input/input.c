@@ -107,6 +107,7 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc){
   deckArray = calloc(1, sizeof(*deckArray));
   char *line=NULL;
   size_t x=0;
+  *(n_hands) = 0;
   while(getline(&line, &x, f)>=0){
     deckArray = realloc(deckArray, (*n_hands + 1)*sizeof(*deckArray));
     deckArray[*n_hands] = hand_from_string(line, fc);
