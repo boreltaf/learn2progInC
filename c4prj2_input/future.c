@@ -7,7 +7,7 @@ void add_future_card(future_cards_t * fc, size_t index, card_t * ptr){
      fc->decks[index].cards[fc->decks[index].n_cards -1] = ptr;
      }
   else{
-    for(int i=0; i<index; i++){
+    for(int i=fc->n_decks; i<index; i++){
       if(i>= fc->n_decks){
 	fc->decks = realloc(fc->decks, ++(fc->n_decks)*sizeof(*(fc->decks)));
 	fc->decks[fc->n_decks - 1].n_cards =0;
