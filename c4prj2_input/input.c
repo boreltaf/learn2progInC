@@ -39,10 +39,10 @@ int checkEntry(char v, char s, char r){
 
 
 deck_t * hand_from_string(const char * str, future_cards_t * fc){
-  if((str ==NULL)||(strlen(str)==0)){
+  /* if((str ==NULL)||(strlen(str)==0)){
     perror("ther is no character in this line\n");
     exit(EXIT_FAILURE);
-  }
+    }*/
   deck_t *deck = calloc(1, sizeof(*deck));
   deck->n_cards = 0;
   deck->cards = NULL;
