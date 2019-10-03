@@ -71,7 +71,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
 	  add_future_card(fc, checkEntry(str[i], str[i+1], str[i+2]), card);
 	  i+=3;
 	}
-      else{ perror(" wrong cards\n"); exit(EXIT_FAILURE);}
+      // else{ perror(" wrong cards\n"); exit(EXIT_FAILURE);}
     }
     else{
       if(checkEntry(str[i], str[i+1], '+')==100){
