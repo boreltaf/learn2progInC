@@ -26,14 +26,12 @@ void future_cards_from_deck(deck_t * deck, future_cards_t * fc){
     perror(" ERROR! there is no cards in the future deck \n");
     return;
   }
-  int index = 0;
   for(int i=0; i< fc->n_decks; i++){
     if(fc->decks[i].cards!= NULL){
       for(int j=0; j< (fc->decks[i]).n_cards; j++){
-	  (fc->decks[i]).cards[j]->value = deck->cards[index]->value;
-	  (fc->decks[i]).cards[j]->suit = deck->cards[index]->suit;
+	  (fc->decks[i]).cards[j]->value = deck->cards[i]->value;
+	  (fc->decks[i]).cards[j]->suit = deck->cards[i]->suit;
 	}
-      index++;
     }
   }
 }
