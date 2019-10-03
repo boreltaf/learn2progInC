@@ -48,9 +48,9 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
   deck->cards = NULL;
   int i=0, count=0; // count will help us count the number of cards we have in the hand
   while((str[i]!='\n')&&(str[i]!='\0')){
-    /* while(str[i]==' '){
+     while(str[i]==' '){
       i++;
-    }*/
+    }
     if(i+1>=strlen(str)){
 	goto label;
       }
