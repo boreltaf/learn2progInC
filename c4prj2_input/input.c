@@ -57,7 +57,6 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
     else if(checkEntry(str[i], str[i+1])>=0){
       card_t *card = add_empty_card(deck);
       add_future_card(fc, checkEntry(str[i], str[i+1]), card);
-      printf("%s, the current character is %c\n", str, str[i]);
     }
     else{ perror(" wrong cards\n"); exit(EXIT_FAILURE);}
     if(i>=strlen(str)){
