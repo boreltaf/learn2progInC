@@ -5,7 +5,7 @@
 // this function will take in two characters and check if the first is a valid value and the second a valid suit.
 // if they are both valid it will return 10, if the first is the charcter '?' then the function will check if the second
 // is a valid number( between 0 and 9) and will return it. if anything else, the function will return -1 
-int checkEntry(char v, char s){
+int checkEntry(char v, char s, char r){
   int val=0, su=0;
   for(int i=2; i<=9; i++){
     if(v=='0'+i){ val++;}
@@ -23,10 +23,15 @@ int checkEntry(char v, char s){
   if(s=='d'){ su++;}
   if(s=='c'){ su++;}
 
-  if((val==1)&&(su==1)){ return 53;}
+  if((val==1)&&(su==1)){ return 100;}
   else if((val==5)&&(su==0)){
-    for(int j=0; j<52; j++){
-      if(s=='0'+j){ return j;}
+    for(int j=0; j<9; j++){
+      if((s=='0'+j)){
+	for(int d=1; d<9; d++){
+	  if(r=='0'+d){ return 10*j + d;}
+	}
+	return j;
+      }
     }
   }
   return -1;
@@ -49,17 +54,37 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
     if(i+1>=strlen(str)){
 	goto label;
       }
-    if(checkEntry(str[i], str[i+1])==53){
+    if(i+2<strlen(str)){
+      if(checkEntry(str[i], str[i+1], '+')==100){
        card_t c = card_from_letters(str[i], str[i+1]);
        add_card_to(deck, c);
        count++;
-    }
-    else if(checkEntry(str[i], str[i+1])>=0){
+       i+=2;
+      }
+      else if(checkEntry(str[i], str[i+1], '+')>=0){
       card_t *card = add_empty_card(deck);
-      add_future_card(fc, checkEntry(str[i], str[i+1]), card);
+      add_future_card(fc, checkEntry(str[i], str[i+1], '+'), card);
+      i+=2;
+      }
+      else if(checkEntry(str[i], str[i+1], str[i+2])>=0){
+	  card_t *card = add_empty_card(deck);
+	  add_future_card(fc, checkEntry(str[i], str[i+1], str[i+2]), card);
+	  i+=3;
+	}
+      else{ perror(" wrong cards\n"); exit(EXIT_FAILURE);}
     }
-    else{ perror(" wrong cards\n"); exit(EXIT_FAILURE);}
-    i+=2;
+    else{
+      if(checkEntry(str[i], str[i+1], '+')==100){
+	card_t c = card_from_letters(str[i], str[i+1]);
+	add_card_to(deck, c);
+	count++;
+      }
+      else if(checkEntry(str[i], str[i+1], '+')>=0){
+	card_t *card = add_empty_card(deck);
+	add_future_card(fc, checkEntry(str[i], str[i+1], '+'), card);
+      }
+      else{ perror(" wrong cards\n"); exit(EXIT_FAILURE);}
+    }
     if(i>=strlen(str)){
       goto label;
     }
