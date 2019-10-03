@@ -39,10 +39,10 @@ int checkEntry(char v, char s, char r){
 
 
 deck_t * hand_from_string(const char * str, future_cards_t * fc){
-  /* if((str ==NULL)||(strlen(str)==0)){
+  if((str ==NULL)||(strlen(str)==0)){
     perror("ther is no character in this line\n");
     exit(EXIT_FAILURE);
-    }*/
+    }
   deck_t *deck = calloc(1, sizeof(*deck));
   deck->n_cards = 0;
   deck->cards = NULL;
@@ -71,7 +71,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
 	  add_future_card(fc, checkEntry(str[i], str[i+1], str[i+2]), card);
 	  i+=3;
 	}
-      // else{ perror(" wrong cards\n"); exit(EXIT_FAILURE);}
+      else{ perror(" wrong cards\n"); exit(EXIT_FAILURE);}
     }
     else{
       if(checkEntry(str[i], str[i+1], '+')==100){
@@ -83,12 +83,12 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
 	card_t *card = add_empty_card(deck);
 	add_future_card(fc, checkEntry(str[i], str[i+1], '+'), card);
       }
-      //else{ perror(" wrong cards\n"); exit(EXIT_FAILURE);}
+      else{ perror(" wrong cards\n"); exit(EXIT_FAILURE);}
     }
     if(i>=strlen(str)){
       goto label;
     }
-    //if(str[i]!=' '){ printf("the this line is invalid\n"); exit(EXIT_FAILURE);}
+    if(str[i]!=' '){/* printf("the this line is invalid\n");*/ exit(EXIT_FAILURE);}
   }
  label: if(count<5){
     perror("This line has less than 5 cards\n");
