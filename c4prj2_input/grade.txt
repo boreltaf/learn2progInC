@@ -1,4 +1,4 @@
-Grading at Thu Oct  3 03:48:27 UTC 2019
+Grading at Thu Oct  3 03:58:42 UTC 2019
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
@@ -17,94 +17,60 @@ Test case passed
 Testing with input file with 
  o Many hands
  o 1 unknown/future cards per hand
-Valgrind reported errors:
-==813== Memcheck, a memory error detector
-==813== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==813== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==813== Command: ./tester h.txt d.txt
-==813== Parent PID: 812
-==813== 
-==813== Conditional jump or move depends on uninitialised value(s)
-==813==    at 0x4C2FD0C: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==813==    by 0x4011DE: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==813==    by 0x400DCE: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==813==    by 0x400F44: read_input (in /graderhome/work/c4prj2_input/tester)
-==813==    by 0x402187: main (test-input.c:69)
-==813== 
-==813== Conditional jump or move depends on uninitialised value(s)
-==813==    at 0x4C2DB3C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==813==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==813==    by 0x4011DE: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==813==    by 0x400DCE: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==813==    by 0x400F44: read_input (in /graderhome/work/c4prj2_input/tester)
-==813==    by 0x402187: main (test-input.c:69)
-==813== 
-==813== Use of uninitialised value of size 8
-==813==    at 0x40121C: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==813==    by 0x400DCE: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==813==    by 0x400F44: read_input (in /graderhome/work/c4prj2_input/tester)
-==813==    by 0x402187: main (test-input.c:69)
-==813== 
-==813== Conditional jump or move depends on uninitialised value(s)
-==813==    at 0x40131F: future_cards_from_deck (in /graderhome/work/c4prj2_input/tester)
-==813==    by 0x402261: main (test-input.c:81)
-==813== 
-==813== 
-==813== HEAP SUMMARY:
-==813==     in use at exit: 0 bytes in 0 blocks
-==813==   total heap usage: 120 allocs, 120 frees, 15,688 bytes allocated
-==813== 
-==813== All heap blocks were freed -- no leaks are possible
-==813== 
-==813== For counts of detected and suppressed errors, rerun with: -v
-==813== Use --track-origins=yes to see where uninitialised values come from
-==813== ERROR SUMMARY: 44 errors from 4 contexts (suppressed: 0 from 0)
+Line_2_did_not_match
+Line_3_did_not_match
+Line_4_did_not_match
+Line_5_did_not_match
+Line_6_did_not_match
+Line_7_did_not_match
+Line_8_did_not_match
+Line_9_did_not_match
+Line_10_did_not_match
+Line_11_did_not_match
+Line_12_did_not_match
+Line_13_did_not_match
+Line_15_did_not_match
+Line_16_did_not_match
+Line_17_did_not_match
+Line_18_did_not_match
+Line_19_did_not_match
+Line_20_did_not_match
+Line_21_did_not_match
+Line_22_did_not_match
+Line_23_did_not_match
+Line_24_did_not_match
+Line_25_did_not_match
+Line_26_did_not_match
+Line_28_did_not_match
+Line_29_did_not_match
+Line_30_did_not_match
+Line_31_did_not_match
+Line_32_did_not_match
+Line_33_did_not_match
+Line_34_did_not_match
+Line_35_did_not_match
+Line_36_did_not_match
+Line_37_did_not_match
+Line_38_did_not_match
+Line_39_did_not_match
+Line_41_did_not_match
+Line_42_did_not_match
+Line_43_did_not_match
+Line_44_did_not_match
+Line_45_did_not_match
+Line_46_did_not_match
+Line_47_did_not_match
+Line_48_did_not_match
+Line_49_did_not_match
+Line_50_did_not_match
+Line_51_did_not_match
+Line_52_did_not_match
+Your file did not match the expected ouput
+Test case failed
 Testing with input file with 
  o Many hands
  o Many unknown/future cards per hand
-Valgrind reported errors:
-==819== Memcheck, a memory error detector
-==819== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==819== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==819== Command: ./tester i1 i2
-==819== Parent PID: 818
-==819== 
-==819== Conditional jump or move depends on uninitialised value(s)
-==819==    at 0x4C2FD0C: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==819==    by 0x4011DE: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==819==    by 0x400DCE: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==819==    by 0x400F44: read_input (in /graderhome/work/c4prj2_input/tester)
-==819==    by 0x402187: main (test-input.c:69)
-==819== 
-==819== Conditional jump or move depends on uninitialised value(s)
-==819==    at 0x4C2DB3C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==819==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==819==    by 0x4011DE: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==819==    by 0x400DCE: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==819==    by 0x400F44: read_input (in /graderhome/work/c4prj2_input/tester)
-==819==    by 0x402187: main (test-input.c:69)
-==819== 
-==819== Use of uninitialised value of size 8
-==819==    at 0x40121C: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==819==    by 0x400DCE: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==819==    by 0x400F44: read_input (in /graderhome/work/c4prj2_input/tester)
-==819==    by 0x402187: main (test-input.c:69)
-==819== 
-==819== 
-==819== HEAP SUMMARY:
-==819==     in use at exit: 904 bytes in 17 blocks
-==819==   total heap usage: 31 allocs, 14 frees, 10,944 bytes allocated
-==819== 
-==819== LEAK SUMMARY:
-==819==    definitely lost: 0 bytes in 0 blocks
-==819==    indirectly lost: 0 bytes in 0 blocks
-==819==      possibly lost: 0 bytes in 0 blocks
-==819==    still reachable: 904 bytes in 17 blocks
-==819==         suppressed: 0 bytes in 0 blocks
-==819== Rerun with --leak-check=full to see details of leaked memory
-==819== 
-==819== For counts of detected and suppressed errors, rerun with: -v
-==819== Use --track-origins=yes to see where uninitialised values come from
-==819== ERROR SUMMARY: 12 errors from 3 contexts (suppressed: 0 from 0)
+Your file did not match the expected ouput
+Test case failed
 
 Overall Grade: C
