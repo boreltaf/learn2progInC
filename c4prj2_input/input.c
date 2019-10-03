@@ -1,3 +1,7 @@
+#include "input.h"
+
+
+
 // this function will take in two characters and check if the first is a valid value and the second a valid suit.
 // if they are both valid it will return 10, if the first is the charcter '?' then the function will check if the second
 // is a valid number( between 0 and 9) and will return it. if anything else, the function will return -1 
@@ -6,14 +10,14 @@ int checkEntry(char v, char s){
   for(int i=2; i<=9; i++){
     if(v=='0'+i){ val++;}
   }
-  if(value=='0'){
+  if(v=='0'){
     val++;
   }
   if(v=='J'){ val++;}
   if(v=='Q'){ val++;}
   if(v=='K'){ val++;}
   if(v=='A'){ val++;}
-  if(v=='?'){ val = 5}
+  if(v=='?'){ val = 5;}
   if(s=='s'){ su++;}
   if(s=='h'){ su++;}
   if(s=='d'){ su++;}
