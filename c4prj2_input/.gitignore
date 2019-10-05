@@ -1,3 +1,11 @@
+Makefile
+        Makefile~
+	        main_test
+		        main_test.c
+			        main_test.c~
+				        main_test.o
+					        test.txt
+
 c4prj2_input/Makefile
 c4prj2_input/Makefile~
 	        c4prj2_input/main_test
