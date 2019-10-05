@@ -65,11 +65,13 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
       card_t *card = add_empty_card(deck);
       add_future_card(fc, checkEntry(str[i], str[i+1], '+'), card);
       i+=2;
+      count++;
       }
       else if(checkEntry(str[i], str[i+1], str[i+2])>=0){
 	  card_t *card = add_empty_card(deck);
 	  add_future_card(fc, checkEntry(str[i], str[i+1], str[i+2]), card);
 	  i+=3;
+	  count++;
 	}
       else{ perror(" wrong cards\n"); exit(EXIT_FAILURE);}
     }
@@ -77,7 +79,6 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
       if(checkEntry(str[i], str[i+1], '+')==100){
 	card_t c = card_from_letters(str[i], str[i+1]);
 	add_card_to(deck, c);
-	count++;
       }
       else if(checkEntry(str[i], str[i+1], '+')>=0){
 	card_t *card = add_empty_card(deck);
@@ -85,6 +86,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
       }
       else{ perror(" wrong cards\n"); exit(EXIT_FAILURE);}
       i+=2;
+      count++;
     }
     if(i>=strlen(str)){
       goto label;
