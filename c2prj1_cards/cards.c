@@ -38,9 +38,9 @@ const char * ranking_to_string(hand_ranking_t r) {
   if(r==NOTHING){
     return "NOTHING";
   }
-  else{
+  /*else{
     return "ERROR WRONG ENTRY";
-  }
+  }*/
 }
 
 char value_letter(card_t c) {
@@ -102,7 +102,7 @@ card_t card_from_letters(char value_let, char suit_let) {
     if(value_let=='A'){
       temp.value=14;
     }
-    if(value_let==0){ printf(" wrong entry\n");
+    //if(value_let==0){ printf(" wrong entry\n");
   }
   
   if(suit_let=='s'){
@@ -113,7 +113,7 @@ card_t card_from_letters(char value_let, char suit_let) {
   }
   else if(suit_let=='c'){temp.suit=CLUBS;}
   else if(suit_let=='d'){temp.suit=DIAMONDS;}
-  else{ printf("WRONG ENTRY");
+//else{ printf("WRONG ENTRY");
     
   }
   return temp;
