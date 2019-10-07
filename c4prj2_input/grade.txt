@@ -1,10 +1,28 @@
-Grading at Mon Oct  7 18:19:55 UTC 2019
+Grading at Mon Oct  7 18:21:34 UTC 2019
 Compiling cards.c -> cards.o
-cards.c: In function ‘ranking_to_string’:
-cards.c:44:1: error: control reaches end of non-void function [-Werror=return-type]
- }
- ^
-cc1: all warnings being treated as errors
-Compilation of cards.c failed
+Compiling deck.c -> deck.o
+Compiling input.c -> input.o
+Compiling future.c -> future.o
+Linking input.o, future.o deck.o, cards.o, and our tester
+Testing with input file with 
+ o 1 hand
+ o No unknown/future cards
+Your file matched the expected output
+Test case passed
+Testing with input file with 
+ o Many hands
+ o No unknown/future cards
+Your file matched the expected output
+Test case passed
+Testing with input file with 
+ o Many hands
+ o 1 unknown/future cards per hand
+Your file matched the expected output
+Test case passed
+Testing with input file with 
+ o Many hands
+ o Many unknown/future cards per hand
+Your file did not match the expected ouput
+Test case failed
 
-Overall Grade: F
+Overall Grade: B
