@@ -41,6 +41,7 @@ const char * ranking_to_string(hand_ranking_t r) {
   /*else{
     return "ERROR WRONG ENTRY";
   }*/
+  return "ERROR";
 }
 
 char value_letter(card_t c) {
