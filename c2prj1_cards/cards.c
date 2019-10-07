@@ -103,7 +103,7 @@ card_t card_from_letters(char value_let, char suit_let) {
       temp.value=14;
     }
     //if(value_let==0){ printf(" wrong entry\n");
-  }
+    // }
   
   if(suit_let=='s'){
     temp.suit=SPADES;
@@ -115,7 +115,7 @@ card_t card_from_letters(char value_let, char suit_let) {
   else if(suit_let=='d'){temp.suit=DIAMONDS;}
 //else{ printf("WRONG ENTRY");
     
-  }
+  //}
   return temp;
 }
 
