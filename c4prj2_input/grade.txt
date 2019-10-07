@@ -1,28 +1,40 @@
-Grading at Mon Oct  7 18:13:23 UTC 2019
+Grading at Mon Oct  7 18:18:20 UTC 2019
 Compiling cards.c -> cards.o
-Compiling deck.c -> deck.o
-Compiling input.c -> input.o
-Compiling future.c -> future.o
-Linking input.o, future.o deck.o, cards.o, and our tester
-Testing with input file with 
- o 1 hand
- o No unknown/future cards
-Your file matched the expected output
-Test case passed
-Testing with input file with 
- o Many hands
- o No unknown/future cards
-Your file matched the expected output
-Test case passed
-Testing with input file with 
- o Many hands
- o 1 unknown/future cards per hand
-Your file matched the expected output
-Test case passed
-Testing with input file with 
- o Many hands
- o Many unknown/future cards per hand
-Your file did not match the expected ouput
-Test case failed
+cards.c: In function ‘card_from_letters’:
+cards.c:82:10: error: variable ‘temp’ set but not used [-Werror=unused-but-set-variable]
+   card_t temp;
+          ^
+cards.c: At top level:
+cards.c:108:3: error: expected identifier or ‘(’ before ‘if’
+   if(suit_let=='s'){
+   ^
+cards.c:111:3: error: expected identifier or ‘(’ before ‘else’
+   else if(suit_let=='h'){
+   ^
+cards.c:114:3: error: expected identifier or ‘(’ before ‘else’
+   else if(suit_let=='c'){temp.suit=CLUBS;}
+   ^
+cards.c:115:3: error: expected identifier or ‘(’ before ‘else’
+   else if(suit_let=='d'){temp.suit=DIAMONDS;}
+   ^
+cards.c:118:3: error: expected identifier or ‘(’ before ‘}’ token
+   }
+   ^
+cards.c:119:3: error: expected identifier or ‘(’ before ‘return’
+   return temp;
+   ^
+cards.c:120:1: error: expected identifier or ‘(’ before ‘}’ token
+ }
+ ^
+cards.c: In function ‘ranking_to_string’:
+cards.c:44:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cards.c: In function ‘card_from_letters’:
+cards.c:106:3: error: control reaches end of non-void function [-Werror=return-type]
+   }
+   ^
+cc1: all warnings being treated as errors
+Compilation of cards.c failed
 
-Overall Grade: B
+Overall Grade: F
