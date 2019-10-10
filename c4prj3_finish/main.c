@@ -16,11 +16,11 @@ int main(int argc, char ** argv) {
       perror("you do not have enough argument\n");
       exit(EXIT_FAILURE);
     }
-  unsigned int  num_trials = 80000;
-  /*if(argc > 2)
+  unsigned int  num_trials = 10000;
+  if(argc >= 3)
     {
       num_trials = *argv[2];
-    }*/
+    }
   FILE *f = fopen(argv[1], "r");
   if(f==NULL)
     {
