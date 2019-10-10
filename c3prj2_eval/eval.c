@@ -57,7 +57,7 @@ size_t get_match_index(unsigned * match_counts, size_t n,unsigned n_of_akind){
   for(i=0; i< n; i++){
     if(match_counts[i]==n_of_akind){ return i;}
   }
-  printf(" ERROR there is no n_of_kind in match_count\n");
+  // printf(" ERROR there is no n_of_kind in match_count\n");
 
   return 0;
 }

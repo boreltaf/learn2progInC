@@ -1,1 +1,1 @@
-../c2prj1_cards/cards.c
+/home/student/learn2prog/c2prj1_cards/cards.c

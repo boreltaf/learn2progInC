@@ -27,7 +27,7 @@ int checkEntry(char v, char s, char r){
   else if((val==5)&&(su==0)){
     for(int j=0; j<=9; j++){
       if(s=='0'+j){
-	for(int d=1; d<=9; d++){
+	for(int d=0; d<=9; d++){
 	  if(r=='0'+d){ return 10*j + d;}
 	}
 	return j;
@@ -61,7 +61,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
        count++;
        i+=2;
       }
-      else if(checkEntry(str[i], str[i+1], '+')>=0){
+      else if((checkEntry(str[i], str[i + 1], str[i + 2]) >= 0)&&(checkEntry(str[i], str[i + 1], str[i + 2])<=9)){
       card_t *card = add_empty_card(deck);
       add_future_card(fc, checkEntry(str[i], str[i+1], '+'), card);
       i+=2;
