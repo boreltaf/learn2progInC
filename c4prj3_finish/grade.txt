@@ -1,0 +1,70 @@
+Grading at Thu Oct 10 19:32:18 UTC 2019
+Running 'make clean' to do a clean build of your project
+rm -rf *.o poker *~
+Running 'make poker OTHERFLAGS=-O3' to build your project
+gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3   -c -o cards.o cards.c
+gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3   -c -o deck.o deck.c
+gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3   -c -o eval.o eval.c
+gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3   -c -o future.o future.c
+gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3   -c -o input.o input.c
+gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3   -c -o main.o main.c
+gcc -o poker -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3 cards.o deck.o eval.o future.o input.o main.o
+ - Starting with some Texas Hold'em hands
+Running a simulation with 20000 draws for 2 hands...
+ ** Hand 0 differed from our answer by 34.26%
+ ** Hand 1 differed from our answer by 63.99%
+You dont seem to have the right total draws.
+Yours sum to 50 but I expected 20000
+Running a simulation with 25000 draws for 3 hands...
+ ** Hand 0 differed from our answer by 13.91%
+ ** Hand 1 differed from our answer by 65.94%
+ ** Hand 2 differed from our answer by 18.79%
+You dont seem to have the right total draws.
+Yours sum to 50 but I expected 25000
+Running a simulation with 25000 draws for 3 hands...
+ ** Hand 0 differed from our answer by 44.48%
+ ** Hand 1 differed from our answer by 15.90%
+ ** Hand 2 differed from our answer by 38.30%
+You dont seem to have the right total draws.
+Yours sum to 50 but I expected 25000
+Running a simulation with 25000 draws for 2 hands...
+ ** Hand 0 differed from our answer by 66.01%
+ ** Hand 1 differed from our answer by 22.86%
+You dont seem to have the right total draws.
+Yours sum to 50 but I expected 25000
+Running a simulation with 80000 draws for 4 hands...
+ ** Hand 0 differed from our answer by 17.94%
+ ** Hand 1 differed from our answer by 54.04%
+ ** Hand 2 differed from our answer by 18.00%
+ ** Hand 3 differed from our answer by 9.01%
+You dont seem to have the right total draws.
+Yours sum to 56 but I expected 80000
+Running a simulation with 30000 draws for 2 hands...
+ ** Hand 0 differed from our answer by 41.22%
+ ** Hand 1 differed from our answer by 57.78%
+You dont seem to have the right total draws.
+Yours sum to 51 but I expected 30000
+ - Next, few Seven Card Stud hands
+Running a simulation with 30000 draws for 2 hands...
+ ** Hand 0 differed from our answer by 46.40%
+ ** Hand 1 differed from our answer by 52.57%
+You dont seem to have the right total draws.
+Yours sum to 51 but I expected 30000
+Running a simulation with 40000 draws for 3 hands...
+ ** Hand 0 differed from our answer by 12.99%
+ ** Hand 1 differed from our answer by 39.81%
+ ** Hand 2 differed from our answer by 46.20%
+You dont seem to have the right total draws.
+Yours sum to 52 but I expected 40000
+ - Then one from a completely made up poker variant
+Running a simulation with 100000 draws for 6 hands...
+ ** Hand 0 differed from our answer by 3.86%
+ ** Hand 1 differed from our answer by 3.81%
+ ** Hand 2 differed from our answer by 10.33%
+ ** Hand 3 differed from our answer by 7.93%
+ ** Hand 4 differed from our answer by 61.75%
+ ** Hand 5 differed from our answer by 11.06%
+You dont seem to have the right total draws.
+Yours sum to 49 but I expected 100000
+
+Overall Grade: F
