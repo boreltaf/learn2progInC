@@ -1,4 +1,4 @@
-Grading at Thu Oct 10 23:33:24 UTC 2019
+Grading at Thu Oct 10 23:40:34 UTC 2019
 Running 'make clean' to do a clean build of your project
 rm -rf *.o poker *~
 Running 'make poker OTHERFLAGS=-O3' to build your project
@@ -14,48 +14,47 @@ Running a simulation with 20000 draws for 2 hands...
     Hand 0 was close enough to our answer
     Hand 1 was close enough to our answer
 You dont seem to have the right total draws.
-Yours sum to 10000 but I expected 20000
+Yours sum to 80000 but I expected 20000
 Running a simulation with 25000 draws for 3 hands...
     Hand 0 was close enough to our answer
     Hand 1 was close enough to our answer
     Hand 2 was close enough to our answer
 You dont seem to have the right total draws.
-Yours sum to 10000 but I expected 25000
+Yours sum to 80000 but I expected 25000
 Running a simulation with 25000 draws for 3 hands...
     Hand 0 was close enough to our answer
     Hand 1 was close enough to our answer
- ** Hand 2 differed from our answer by 1.63%
+    Hand 2 was close enough to our answer
 You dont seem to have the right total draws.
-Yours sum to 10000 but I expected 25000
+Yours sum to 80000 but I expected 25000
 Running a simulation with 25000 draws for 2 hands...
     Hand 0 was close enough to our answer
     Hand 1 was close enough to our answer
 You dont seem to have the right total draws.
-Yours sum to 10000 but I expected 25000
+Yours sum to 80000 but I expected 25000
 Running a simulation with 80000 draws for 4 hands...
     Hand 0 was close enough to our answer
     Hand 1 was close enough to our answer
     Hand 2 was close enough to our answer
     Hand 3 was close enough to our answer
-You dont seem to have the right total draws.
-Yours sum to 10000 but I expected 80000
+    Test case passed!    
 Running a simulation with 30000 draws for 2 hands...
     Hand 0 was close enough to our answer
     Hand 1 was close enough to our answer
 You dont seem to have the right total draws.
-Yours sum to 10000 but I expected 30000
+Yours sum to 80000 but I expected 30000
  - Next, few Seven Card Stud hands
 Running a simulation with 30000 draws for 2 hands...
     Hand 0 was close enough to our answer
     Hand 1 was close enough to our answer
 You dont seem to have the right total draws.
-Yours sum to 10000 but I expected 30000
+Yours sum to 80000 but I expected 30000
 Running a simulation with 40000 draws for 3 hands...
     Hand 0 was close enough to our answer
     Hand 1 was close enough to our answer
     Hand 2 was close enough to our answer
 You dont seem to have the right total draws.
-Yours sum to 10000 but I expected 40000
+Yours sum to 80000 but I expected 40000
  - Then one from a completely made up poker variant
 Running a simulation with 100000 draws for 6 hands...
     Hand 0 was close enough to our answer
@@ -65,6 +64,6 @@ Running a simulation with 100000 draws for 6 hands...
     Hand 4 was close enough to our answer
     Hand 5 was close enough to our answer
 You dont seem to have the right total draws.
-Yours sum to 10000 but I expected 100000
+Yours sum to 80000 but I expected 100000
 
 Overall Grade: F
