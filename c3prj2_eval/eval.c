@@ -71,12 +71,12 @@ ssize_t  find_secondary_pair(deck_t * hand,
   };
   for(i=0; i<(hand->n_cards); i++){
     if( (match_idx <= i)&&( i<= j)){
-      goto label;
+      k++;
+      continue;
     }
     if( match_counts[i] > 1){
       return i;
     }
-  label: k++;
   }
     
   return -1;
@@ -131,43 +131,46 @@ int is_there_ACE_low( deck_t *hand, size_t index){
   return 0;
 }
     
-
+// this function check if there is a straight starting at the position index and return 1 if there is and 0 if not.
 int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
 
-  if(fs == NUM_SUITS){   
+  if(fs == NUM_SUITS){   // when fs is NUM_suits, we check for any straight
       if(straight_starting_at(hand,index)== 1){ return 1;}
       else{
 	return is_there_ACE_low(hand,index);
       }
     return 0;
     }
-  else{
+  else{ // when fs is not NUM_SUITS, we check for a straight flush with fs
     if(hand->cards[index]->suit == fs){
     int count=1;
     int k=index;
-    while((((*(*hand).cards[k+1]).value) == (((*(*hand).cards[k]).value) - 1))||(((*(*hand).cards[k+1]).value) == ((*(*hand).cards[k]).value))){
+    while(((hand->cards[k+1]->value) == ((hand->cards[k]->value) - 1))||((hand->cards[k+1]->value) == (hand->cards[k]->value))){
       card_t n_card = (*(*hand).cards[k+1]);
       card_t c_card = (*(*hand).cards[k]);
       if(n_card.suit==fs){
 	count++;
       }
       else if((n_card.value == c_card.value - 1)&&(!(n_card.suit == fs))){
-	if((*(*hand).cards[k+2]).value != (*(*hand).cards[k+1]).value){
-	  goto label;
-	}
+	if(k+2< hand->n_cards)
+	  {
+	    if((*(*hand).cards[k+2]).value != (*(*hand).cards[k+1]).value){
+	      break;
+	    }
+	  }
       }
       if(n_card.value == c_card.value){
 	card_t check_c;
 	check_c.value = n_card.value;
 	check_c.suit = fs;
 	if(deck_contains(hand, check_c)==0){
-	  goto label;
+	  break;
 	}
       }
       k++;
       if( k+1 >=  hand->n_cards){ break;}
   }
-      label:  if(count >= 5){ return 1;}
+    if(count >= 5){ return 1;}
     int count3=1000;
     for(int v=0; v<4; v++){
       if(((hand->cards[v]->value) == 14)&&(hand->cards[v]->suit == fs)){
@@ -309,10 +312,10 @@ unsigned * get_match_counts(deck_t * hand){
       count++;
       i++;
       if(i + 1>=hand->n_cards){
-	goto label;
+	break;
       }
     }
-  label: for(int k=index; k<(index + count); k++){
+  for(int k=index; k<(index + count); k++){
       match[k] = count;
     }
     index +=count;
