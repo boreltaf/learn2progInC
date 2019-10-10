@@ -70,7 +70,7 @@ int main(int argc, char ** argv) {
   for(size_t j=0; j < *n_hands; j++)
     {
       double percent = winCountArray[j];
-      fprintf(stdout, "Hand %zu won %u / %u times (%.2f%%)\n", j, winCountArray[j], num_trials, percent/num_trials);
+      fprintf(stdout, "Hand %zu won %u / %u times (%.2f%%)\n", j, winCountArray[j], num_trials, 100* percent/num_trials);
     }
   fprintf(stdout, "And there were %u ties\n", winCountArray[*n_hands]);
   free(winCountArray);
