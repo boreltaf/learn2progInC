@@ -16,7 +16,7 @@ int main(int argc, char ** argv) {
       perror("you do not have enough argument\n");
       exit(EXIT_FAILURE);
     }
-  unsigned int  num_trials = 10000;
+  unsigned int  num_trials = 80000;
   /*if(argc > 2)
     {
       num_trials = *argv[2];
