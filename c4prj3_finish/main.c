@@ -17,9 +17,9 @@ int main(int argc, char ** argv) {
       exit(EXIT_FAILURE);
     }
   unsigned int  num_trials = 10000;
-  if(argc >= 3)
+  if(argc > 3)
     {
-      num_trials = *argv[2];
+      num_trials = *argv[3];
     }
   FILE *f = fopen(argv[1], "r");
   if(f==NULL)
