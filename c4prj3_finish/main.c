@@ -19,7 +19,7 @@ int main(int argc, char ** argv) {
   unsigned int  num_trials = 10000;
   if(argc >= 3)
     {
-      num_trials = *argv[2];
+      num_trials = atoi(argv[2]);
     }
   FILE *f = fopen(argv[1], "r");
   if(f==NULL)
