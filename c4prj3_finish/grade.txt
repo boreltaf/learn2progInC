@@ -1,4 +1,4 @@
-Grading at Fri Oct 11 00:09:13 UTC 2019
+Grading at Fri Oct 11 12:16:21 UTC 2019
 Running 'make clean' to do a clean build of your project
 rm -rf *.o poker *~
 Running 'make poker OTHERFLAGS=-O3' to build your project
@@ -12,59 +12,50 @@ gcc -o poker -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3 cards.o deck.o eval.o
  - Starting with some Texas Hold'em hands
 Running a simulation with 20000 draws for 2 hands...
     Hand 0 was close enough to our answer
- ** Hand 1 differed from our answer by -1.35%
-You dont seem to have the right total draws.
-Yours sum to 50 but I expected 20000
+    Hand 1 was close enough to our answer
+    Test case passed!    
 Running a simulation with 25000 draws for 3 hands...
- ** Hand 0 differed from our answer by 2.03%
- ** Hand 1 differed from our answer by -11.28%
- ** Hand 2 differed from our answer by 8.89%
-You dont seem to have the right total draws.
-Yours sum to 50 but I expected 25000
+    Hand 0 was close enough to our answer
+    Hand 1 was close enough to our answer
+    Hand 2 was close enough to our answer
+    Test case passed!    
 Running a simulation with 25000 draws for 3 hands...
- ** Hand 0 differed from our answer by -12.94%
- ** Hand 1 differed from our answer by 7.98%
- ** Hand 2 differed from our answer by 4.64%
-You dont seem to have the right total draws.
-Yours sum to 50 but I expected 25000
+    Hand 0 was close enough to our answer
+    Hand 1 was close enough to our answer
+    Hand 2 was close enough to our answer
+    Test case passed!    
 Running a simulation with 25000 draws for 2 hands...
- ** Hand 0 differed from our answer by 2.65%
- ** Hand 1 differed from our answer by -4.86%
-You dont seem to have the right total draws.
-Yours sum to 50 but I expected 25000
+    Hand 0 was close enough to our answer
+    Hand 1 was close enough to our answer
+    Test case passed!    
 Running a simulation with 80000 draws for 4 hands...
     Hand 0 was close enough to our answer
     Hand 1 was close enough to our answer
- ** Hand 2 differed from our answer by -6.75%
- ** Hand 3 differed from our answer by 5.48%
-You dont seem to have the right total draws.
-Yours sum to 56 but I expected 80000
+    Hand 2 was close enough to our answer
+    Hand 3 was close enough to our answer
+    Test case passed!    
 Running a simulation with 30000 draws for 2 hands...
- ** Hand 0 differed from our answer by -3.43%
- ** Hand 1 differed from our answer by 3.43%
-You dont seem to have the right total draws.
-Yours sum to 51 but I expected 30000
+    Hand 0 was close enough to our answer
+    Hand 1 was close enough to our answer
+    Test case passed!    
  - Next, few Seven Card Stud hands
 Running a simulation with 30000 draws for 2 hands...
- ** Hand 0 differed from our answer by -2.13%
- ** Hand 1 differed from our answer by 2.10%
-You dont seem to have the right total draws.
-Yours sum to 51 but I expected 30000
+    Hand 0 was close enough to our answer
+    Hand 1 was close enough to our answer
+    Test case passed!    
 Running a simulation with 40000 draws for 3 hands...
- ** Hand 0 differed from our answer by 1.57%
- ** Hand 1 differed from our answer by 1.73%
- ** Hand 2 differed from our answer by -3.30%
-You dont seem to have the right total draws.
-Yours sum to 52 but I expected 40000
+    Hand 0 was close enough to our answer
+    Hand 1 was close enough to our answer
+    Hand 2 was close enough to our answer
+    Test case passed!    
  - Then one from a completely made up poker variant
 Running a simulation with 100000 draws for 6 hands...
- ** Hand 0 differed from our answer by -2.20%
+    Hand 0 was close enough to our answer
     Hand 1 was close enough to our answer
- ** Hand 2 differed from our answer by -3.82%
+    Hand 2 was close enough to our answer
     Hand 3 was close enough to our answer
- ** Hand 4 differed from our answer by 9.22%
- ** Hand 5 differed from our answer by -3.09%
-You dont seem to have the right total draws.
-Yours sum to 49 but I expected 100000
+    Hand 4 was close enough to our answer
+    Hand 5 was close enough to our answer
+    Test case passed!    
 
-Overall Grade: F
+Overall Grade: A
